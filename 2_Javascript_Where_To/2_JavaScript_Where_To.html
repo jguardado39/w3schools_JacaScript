@@ -1,0 +1,74 @@
+<!-- The <script> Tag -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+	<h2>JavaScript in Body</h2>
+
+	<p id="demo_1"></p>
+
+	<script>
+		document.getElementById("demo_1").innerHTML = "My First JavaScript";
+	</script>
+	</body>
+</html> 
+
+
+<!-- JavaScript in <head> -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			function myFunction_1() {
+				document.getElementById("demo_2").innerHTML = "Paragraph changed.";
+			}
+		</script>
+	</head>
+	<body>
+	<h2>JavaScript in Head</h2>
+
+	<p id = "demo_2">A paragraph</p>
+
+	<button type = "button" onclick="myFunction_1()">Try it</button>
+	</body>
+</html>
+
+
+<!-- JavaScript in <body> -->
+<!-- Palving scripts at the bottom of the <body> elements improves the display speed, because script compilation slows down the display. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript in Body</h2>
+
+		<p id = "demo_3">A Paragraph.</p>
+
+		<button type = "button" onclick = "myFunction_2()">Try it</button>
+
+		<script>
+			function myFunction_2() {
+				document.getElementById("demo_3").innerHTML = "Paragraph changed.";
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- External JavaScript -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>External JavaScript</h2>
+
+		<p id = "demo_4">A Paragraph.</p>
+
+		<button type = "button" onclick = "myFunction_3()">Try it</button>
+
+		<p>(myFunction_3 is stored in an external file called "2_JavaScript_Where_To.js")</p>
+
+		<script src = "2_JavaScript_Where_To.js"></script>
+	</body>
+</html>
