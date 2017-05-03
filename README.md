@@ -1,1 +1,1 @@
-# w3schools_JacaScript
+# w3schools_JavaScript
