@@ -1,0 +1,193 @@
+<!-- JavaScript Functions -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript Functions</h2>
+
+		<p>This example calls a function which performs a calculation, and returns the results:</p>
+
+		<p id = "demo_1"></p>
+
+		<script>
+			function myFunction_1(p1, p2) {
+				return p1 * p2
+			}
+			document.getElementById("demo_1").innerHTML = myFunction_1(4,3);
+		</script>
+	</body>
+</html>
+
+
+<!-- Function Return -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript Functions</h2>
+
+		<p>This examples calls a function which performs a calculation and returns the result:</p>
+
+		<p id = "demo_2"></p>
+
+		<script>
+			function myFunction_2(a, b) {
+				return a * b;
+			}
+			document.getElementById("demo_2").innerHTML = myFunction_2(4, 3);
+		</script>
+	</body>
+</html>
+
+
+<!-- Why Functions? -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+	<h2>JavaSCript Functions</h2>
+	
+	<p>This examples calls a function to convert from Fahrenheit to Celsius:</p>
+
+	<p id = "demo_3"></p>
+
+	<script>
+		function toCelsius_1(f) {
+			return (5/9) * (f - 32);
+		}
+		document.getElementById("demo_3").innerHTML = toCelsius_1(77);
+	</script>
+	</body>
+</html>
+
+
+<!-- The () Operator Invokes the Function -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript Functions</h2>
+
+		<p>Accessing a function without () will return the function definition instead of the function result:</p>
+
+		<p id = "demo_4"></p>
+
+		<script>
+			function toCelsius_2(f) {
+				return (5 / 9) * (f - 32);
+			}
+			document.getElementById("demo_4").innerHTML = toCelsius_2;
+		</script>	
+	</body>
+</html>
+
+
+<!-- Functions Used as Variable Values -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_5"></p>
+
+		<script>
+			document.getElementById("demo_5").innerHTML = "The temperature is " + toCelsius_3(77) + " Celsius";
+
+			function toCelsius_3(farhrenheit) {
+				return (5 / 9) * (farhrenheit - 32);
+			}
+		</script>
+	</body>
+</html>
+
+
+
+<!-- Test Yourself with Exercises! -->
+
+<!-- Exercise 1 -->
+<!-- Call the function -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_6"></p>
+
+		<script>
+			function myFunction_3() {
+				document.getElementById("demo_6").innerHTML = "Hello World!";
+			}
+			myFunction_3();
+		</script>
+	</body>
+</html>
+
+
+<!-- Exercise 2 -->
+<!-- Figure out what is wrong with the function - fix it and run 	  it as it should! -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_7"></p>
+
+		<script>
+			/*func myFunc*/function myFunction_4() {
+				document.getElementById("demo_7").innerHTML = "Hello WOrld!";
+			}
+			myFunction_4();
+		</script>
+	</body>
+</html>
+
+
+<!-- Exercise 3 -->
+<!-- Use the function to display  the product of 5 * 5 -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_8"></p>
+
+		<script>
+			function myFunction_5() {
+				return 5 * 5;
+			}
+			document.getElementById("demo_8").innerHTML = myFunction_5();
+		</script>
+	</body>
+</html>
+
+
+<!-- Exercise 4 -->
+<!-- Use the function to display "Hello John" -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_9"></p>
+
+		<script>
+			function myFunction_6(name) {
+				return "Hello" + name;
+			}
+			document.getElementById("demo_9").innerHTML = myFunction_6("John");
+		</script>
+	</body>
+</html>
+
+
+<!-- Exercise 5 -->
+<!-- Define a funciton named "myFunction", and make it display "Hello World!" in the <p> element. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_10">Display the result here.</p>
+
+		<script>
+			function myFunction_7() {
+			document.getElementById("demo_10").innerHTML = myFunction_7();
+		}
+		myFunction_7();
+		</script>
+	</body>
+</html>
