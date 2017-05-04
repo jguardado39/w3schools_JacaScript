@@ -1,0 +1,89 @@
+<!-- Single Line Commen  -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h1 id = "myH_1"></h1>
+		<p id = "myP_1"></p>
+
+		<script>
+			// Change heading:
+			document.getElementById("myH_1").innerHTML = "My First Page";
+			document.getElementById("myP_1").innerHTML = "My first paragraph.";
+		</script>
+
+		<p><strong>Note:</strong> The comments are not executed.</p>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_1"></p>
+
+		<script>
+			var x = 5;     // Declare x, give it to the value of 5
+			var y = x + 2; // Declare y, give it the value of x + 2
+
+			document.getElementById("demo_1").innerHTML = y; // Write y to demo_1
+		</script>
+
+		<p><strong>Note: </strong>The comments are not executed.</p>
+	</body>
+</html>
+
+
+<!-- Multi-line Comments -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h1 id = "myH_2"></h1>
+		<p id = "myP_2"></p>
+
+		<script>
+			/* The code below will change the heading with id = "myH_2" and the paragraph with id = "myP_2" in my web page: */
+			document.getElementById("myH_2").innerHTML = "My First Page";
+			document.getElementById("myP_2").innerHTML = "My first paragraph.";
+		</script>
+
+		<p><strong>Note: </strong>The comment block is not executed</p>
+	</body>
+</html>
+
+
+<!-- Using Comments to Prevent Execution -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h1 id = "myH_3"></h1>
+
+		<p id = "myP_3"></p>
+
+		<script>
+			// document.getElementById("myH_3").innerHTML = "My First Page";
+			document.getElementById("myP_3").innerHTML = "My first paragraph.";
+		</script>
+
+		<p><strong>Note: </strong>The comment is not executed.</p>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h1 id = "myH_4"></h1>
+
+		<p id = "myP_4"></p>
+
+		<script>
+			/*
+			document.getElementById("myH_4").innerHTML = "Welcome to my Homepage";
+			document.getElementById("myP_4").innerHTML = "This is my first paragraph.";
+			*/
+		</script>
+
+		<p><strong>Note: </strong>The comment-block is not executed.</p>
+	</body>
+</html>
