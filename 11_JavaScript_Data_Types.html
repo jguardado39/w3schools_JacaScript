@@ -1,0 +1,285 @@
+<!-- The Concept of Data Types -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>When adding a number and a string, JavaScript will treat the number as a string.</p>
+
+		<p id = "demo_1"></p>
+
+		<script>
+			var x = 16 + "Volvo";
+			document.getElementById("demo_1").innerHTML = x;
+		</script>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>When adding a number and a string, JavaScript will treat the number as a string.</p>
+
+		<p id = "demo_2"></p>
+
+		<script>
+			var x = "Volvo" + 16;
+			document.getElementById("demo_2").innerHTML = x;
+		</script>
+	</body>
+</html>
+
+<!-- JavaScript evaluates expressions from left to right. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_3"></p>
+
+		<script>
+			var x = 16 + 4 + "Volvo";
+			document.getElementById("demo_3").innerHTML = x;
+		</script>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_4"></p>
+
+		<script>
+			var x = "Volvo" + 16 + 4;
+			document.getElementById("demo_4").innerHTML = x;
+		</script>
+	</body>
+</html>
+
+
+<!-- JavaScript Strings -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_5"></p>
+
+		<script>
+			var carName1 = "Volvo XC60", carName2 = "Volvo XC60", answer1 = "It's alright", answer2 = "He is called 'Johnny'", answer3 = 'He is called "Johnny"';
+
+			document.getElementById("demo_5").innerHTML = carName1 + "<br>" + carName2 + "<br>" + answer1 + "<br>" + answer2 + "<br>" + answer3;
+		</script>
+	</body>
+</html>
+
+
+<!-- JavaScript Numbers -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_6"></p>
+
+		<script>
+			var x1 = 34.00, x2 = 34, y = 123e5; z = 123e-5;
+			document.getElementById("demo_6").innerHTML = x1 + "<br>" + x2 + "<br>" + y + "<br>" + z;
+		</script>
+	</body>
+</html>
+
+
+<!-- JavaScript Arrays -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_7"></p>
+
+		<script>
+			var cars = ["Saab", "Volvo", "BMW"];
+
+			document.getElementById("demo_7").innerHTML = cars[0];
+		</script>
+	</body>
+</html>
+
+
+<!-- JavaScript Objects -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_8"></p>
+
+		<script>
+			var  person = {
+				firstName: "John",
+				LastName : "Doe",
+				age      : 50,
+				eyeColor : "blue"
+			};
+
+			document.getElementById("demo_8").innerHTML = person.firstName + " is " + person.age + " years old.";
+		</script>
+	</body>
+</html>
+
+
+<!-- The typeof Operator -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript typeof</h2>
+		<p>The typeof operator returns the type of a varaible or an expression.</p>
+
+		<p id = "demo_9"></p>
+
+		<script>
+			document.getElementById("demo_9").innerHTML = typeof "" + "<br>" + typeof "John" + "<br>" + typeof "John Doe";
+		</script>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript typeof</h2>
+
+		<p>The typeof operator returns the type of a variable or an expression.</p>
+
+		<p id = "demo_10"></p>
+
+		<script>
+			document.getElementById("demo_10").innerHTML = typeof 0 + "<br>" + typeof 314 + "<br>" + typeof 3.14 + "<br>" + typeof (3) + "<br>" + typeof (3 + 4);
+		</script>
+	</body>
+</html>
+
+
+<!-- Primitive Data -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript typeof</h2>
+		<p>The typeof operator returns the type of a variable or an expression.</p>
+
+		<p id = "demo_11"></p>
+
+		<script>
+			document.getElementById("demo_11").innerHTML = typeof "john" + "<br>" + typeof 3.14 + "<br>" + typeof true + "<br>" + typeof false;
+		</script>
+	</body>
+</html>
+
+<!-- Complex Data -->
+<!-- The typeof operator reutnrs "object" for arrays because in 	 JavaScript arrays are objects. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript typeof</h2>
+		<p>The typeof operator returns the type of a variable or an expression.</p>
+
+		<p id = "demo_12"></p>
+
+		<script>
+			document.getElementById("demo_12").innerHTML = typeof [1,2,3,4] + "<br>" + typeof {name:'john', age:34} + "<br>" + typeof function myFunc(){};
+		</script>	
+	</body>
+</html>
+
+
+<!-- Undefined -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Both the value, and the data type, of a baraible with no value is <b>undefined</b>.</p>
+
+		<p id = "demo_13"></p>
+
+		<script>
+			var person;
+			document.getElementById("demo_13").innerHTML =
+			person + "<br>" + typeof person;
+		</script>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Variables can be emptied by setting the value to <b>undefined</b>.</p>
+
+		<p id = "demo_14"></p>
+
+		<script>
+			var person = {firstName: "John", lastName: "Doe", age: 50, eyeColor: "blue"};
+			var person = undefined;
+			document.getElementById("demo_14").innerHTML = person + "<br>" + typeof person;
+		</script>
+	</body>
+</html>
+
+
+<!-- Empty Values -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_15"></p>
+
+		<script>
+			var car = "";
+			document.getElementById("demo_15").innerHTML = "The value is: " + car + "<br>" + "The type is: " + typeof car;
+		</script>
+	</body>
+</html>
+
+
+<!-- Null -->
+<!-- Data type of null is an object -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Objects can be emptied by setting the valule to <b>null</b>.</p>
+
+		<p id = "demo_16"></p>
+
+		<script>
+			var person = {firstName: "John", lastName: "Doe", age: 50, eyeColor: "blue"};
+			var person = null;
+			document.getElementById("demo_16").innerHTML = typeof person;
+		</script>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Objects can be emptied by setting the vavlue to <b>undefined</b>.</p>
+
+		<p id = "demo_17"></p>
+
+		<script>
+			var person = {firstName: "John", lastName: "Doe", age: 50, eyeColor: "blue"};
+			var person = undefined;
+			document.getElementById("demo_17").innerHTML = typeof person;
+		</script>
+	</body>
+</html>
+
+
+<!-- Difference Between Undefined and Null -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_18"></p>
+
+		<script>
+			document.getElementById("demo_18").innerHTML = typeof undefined + "<br>" + typeof null + "<br>" + (null === undefined) + "<br>" + (null == undefined);
+		</script>
+	</body>
+</html>
