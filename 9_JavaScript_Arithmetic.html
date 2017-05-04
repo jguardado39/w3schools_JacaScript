@@ -1,0 +1,287 @@
+<!-- Arithmetic Operations -->
+<!-- The two numbers can be literals: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>A typical arithmetic operation takes two numbers and produces a new number.</p>
+
+		<p id = "demo_1"></p>
+
+		<script>
+			var x = 100 + 50;
+			document.getElementById("demo_1").innerHTML = x;
+		</script>
+	</body>
+</html>
+
+<!-- or variables: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>A typical arithmetic operation takes two numberrs (or variables) and produces a new number.</p>
+
+		<p id = "demo_2"></p>
+
+		<script>
+			var a = 100, b = 50, x = a + b;
+			document.getElementById("demo_2").innerHTML = x;
+		</script>
+	</body>
+</html>
+
+<!-- or expressions: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>A typical arithmetic operation takes two numbers (or expressions) and produces a new number.</p>
+
+		<p id = "demo_3"></p>
+
+		<script>
+			var a = 3, x = (100 + 50) * a;
+			document.getElementById("demo_3").innerHTML = x;
+		</script>
+	</body>
+</html>
+
+
+<!-- Operators and Operands -->
+<!-- Addition operator (+) -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>The + Operator</h2>
+
+		<p id = "demo_4"></p>
+
+		<script>
+			var x = 5, y = 2, z = x + y;
+			document.getElementById("demo_4").innerHTML = z;
+		</script>
+	</body>
+</html>
+
+<!-- Subtraction operator (-) -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>The - Operator</h2>
+
+		<p id = "demo_5"></p>
+
+		<script>
+			var x = 5, y = 2, z = x - y;
+			document.getElementById("demo_5").innerHTML = z;
+		</script>
+	</body>
+</html>
+
+<!-- Multiplication operator (*) -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>The * Operator</h2>
+
+		<p id = "demo_6"></p>
+
+		<script>
+			var x = 5, y = 2, z = x * y;
+			document.getElementById("demo_6").innerHTML = z;
+		</script>
+	</body>
+</html>
+
+<!-- Division operator (/) -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2> The / Operator</h2>
+
+		<p id = "demo_7"></p>
+
+		<script>
+			var x = 5, y = 2, z = x / y;
+			document.getElementById("demo_7").innerHTML = z;
+		</script>
+	</body>
+</html>
+
+<!-- Modular operator (%) -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>The % Operator</h2>
+
+		<p id = "demo_8"></p>
+
+		<script>
+			var x = 5, y = 2, z = x % y;
+			document.getElementById("demo_8").innerHTML = z;
+		</script>
+	</body>
+</html>
+
+<!-- Increment operator (++) -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>The ++ Operator</h2>
+
+		<p id = "demo_9"></p>
+
+		<script>
+			var x = 5;
+			x++; 
+			var z = x;
+			document.getElementById("demo_9").innerHTML = z; 
+		</script>
+	</body>
+</html>
+
+<!-- The -- Operator -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>The -- Operator</h2>
+
+		<p id = "demo_10"></p>
+
+		<script>
+			var x = 5;
+			x--;
+			var z = x;
+			document.getElementById("demo_10").innerHTML = z;
+		</script>
+	</body>
+</html>
+
+
+<!-- Operator Precedence -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Multiplicaton has precedence over addition</p>
+
+		<p id = "demo_11"></p>
+
+		<script>
+			document.getElementById("demo_11").innerHTML = 100 + 50 * 3;
+		</script>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Multiplication has precedence over addition.</p>
+		<p>But paranthesis has precedence over multiplication</p>
+
+		<p id = "demo_12"></p>
+
+		<script>
+			document.getElementById("demo_12").innerHTML = (100 + 50) * 3;
+		</script>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>When many operations has the same precedence, they are computed from left to right.</p>
+
+		<p id = "demo_13"></p>
+
+		<script>
+			document.getElementById("demo_13").innerHTML = 100 + 50 - 3
+		</script>
+	</body>
+</html>
+
+
+
+
+<!-- Exercise 1 -->
+<!-- Display the sum of 10 + 5, using two variables x and y -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_14"></p>
+
+		<script>
+			var x = 10, y = 5;
+			document.getElementById("demo_14").innerHTML = x + y;
+		</script>
+	</body>
+</html>
+
+<!-- Exercise 2 -->
+<!-- Display the difference of 10 - 5, using two variables x and y -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_15"></p>
+
+		<script>
+			var x = 10, y = 5;
+			document.getElementById("demo_15").innerHTML = x - y;
+		</script>
+	</body>
+</html>
+
+<!-- Exercise 3 -->
+<!-- Display the product 10 * 5, using two variables x and y -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_16"></p>
+
+		<script>
+			var x = 10, y = 5;
+			document.getElementById("demo_16").innerHTML = x * y;
+		</script>
+	</body>
+</html>
+
+<!-- Exercise 4 -->
+<!-- Display the result of 10 / 5, using two variables x and y. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p = id = "demo_17"></p>
+
+		<script>
+			var x = 10, y = 5;
+			document.getElementById("demo_17").innerHTML = x / y;
+		</script>
+	</body>
+</html>
+
+<!-- Exercise 5 -->
+<!-- Find the remainder when 15 is divided by 9, using two 			 variables x and y. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_18"></p>
+
+		<script>
+			var x = 15, y = 9;
+			document.getElementById("demo_18").innerHTML = x % y;
+		</script>
+	</body>
+</html>
