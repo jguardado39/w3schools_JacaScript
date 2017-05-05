@@ -1,0 +1,80 @@
+<!-- HTML Events -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<button onclick = "document.getElementById('demo_1').innerHTML = Date()">The time is?</button>
+
+		<p id = "demo_1"></p>
+	</body>
+</html>
+
+<!-- JavaScript code is often several lines long. It is more common 	 to see event attributes calling functions: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<button onclick = "this.innerHTML = Date()">The time is?</button>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Click the button to display the date.</p>
+
+		<button onclick = "displayDate()">The time is?</button>
+
+		<script>
+			function displayDate() {
+				document.getElementById("demo_2").innerHTML = Date();
+			}
+		</script>
+
+		<p id = "demo_2"></p>
+	</body>
+</html>
+
+
+
+
+<!-- Test Yourself with Exercises! -->
+
+<!-- Exercise 1 -->
+<!-- The <p> element should do something when someone clicks on it. 	 Try to fix it! -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p onclick = "this.innerHTML = 'GOOD JOB!'">Click me.</p>
+	</body>
+</html>
+
+
+<!-- Exercise 2 -->
+<!-- When the button is clicked, trigger myFunction() with an 			 event. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<button onclick = "myFunction()">Click Me</button>
+
+		<p id = "demo_3"></p>
+
+		<script>
+			function myFunction() {
+				document.getElementById("demo_3").innerHTML = "Hello World";
+			}
+		</script>
+	</body>
+</html>
+
+<!-- Exercise 3 -->
+<!--The <span> element shoudl do something when someone moves the mouse over it. Try to fix it!  -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+	<span onmouseover = "this.style.color = 'red'">Mouse over me!</span>
+	</body>
+</html>
