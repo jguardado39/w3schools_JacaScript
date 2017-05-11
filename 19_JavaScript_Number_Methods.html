@@ -1,0 +1,175 @@
+<!-- Primitive values (like 3.14 or 2014), cannot have properties and 		 methods (because they are not objects). -->
+<!-- The toString() Method -->
+<!-- toString() returns a number as a string -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>The JavaScript method converts a number to a string</h2>
+
+		<p>The toString() method converts a number to a string</p>
+
+		<p id = "demo_1"></p>
+
+		<script>
+			var x = 123;
+			document.getElementById("demo_1").innerHTML = x.toString() + "<br>" + (123).toString() + "<br>" + (100 + 23).toString();
+		</script>
+	</body>
+</html>
+
+
+<!-- The toExponential() Method -->
+<!-- toExponential() returns a string, with a number rounded and written 	  using exponential notation. -->
+<!-- The parameter is optional. If you don't specify it, JavaScript will 	  not round the number -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>The toExponential() method returns a string, with the number rounded and written using exponential notation.</p>
+
+		<p>An optional parameter defines the number of digits behind the deimal point.</p>
+
+		<p id = "demo_2"></p>
+
+		<script>
+			var x = 9.656;
+			document.getElementById("demo_2").innerHTML = x.toExponential() + "<br>" + x.toExponential(2) + "<br>" + x.toExponential(4) + "<br>" + x.toExponential(6);
+		</script>
+	</body>
+</html>
+
+
+<!-- The toFixed() Method -->
+<!-- toFixed() returns a string, with the number written with a 			 specified number of decimals: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>The toFixed() method rounds a number to a given number of digits.</p>
+		<p>For working with money, toFixed(2) is perfect.</p>
+
+		<p id = "demo_3"></p>
+
+		<script>
+			var x = 9.656;
+			document.getElementById("demo_3").innerHTML = x.toFixed(0) + "<br>" + x.toFixed(2) + "<br>" + x.toFixed(4) + "<br>" + x.toFixed(6);
+		</script>
+	</body>
+</html>
+
+
+<!-- The toPrecision() Method -->
+<!-- toPrecision() returns a string, with a number written with a 			 specified length: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+	<p>The toPrecisions() method returns a string, with anumber written with a specified length:</p>
+
+	<p id = "demo_4"></p>
+
+	<script>
+		var x = 9.656;
+		document.getElementById("demo_4").innerHTML = x.toPrecision() + "<br>" + x.toPrecision(2) + "<br>" + x.toPrecision(4) + "<br>" + x.toPrecision(6);
+	</script>
+	</body>
+</html>
+
+
+<!-- The valueOf() Method -->
+<!-- valueOf() returns a number as a number -->
+<!-- There is no reason to use it in your code -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_5"></p>
+
+		<script>
+			var x = 123;
+			document.getElementById("demo_5").innerHTML = x.valueOf() + "<br>" + (123).valueOf() + "<br>" + (100 + 23).valueOf();
+		</script>
+	</body>
+</html>
+
+
+<!-- The Number() Method -->
+<!-- Number() can be used to covert JavaScript variables to numbers: -->
+<!-- Used on Date(), the Number() method returns the number of 				 miliseconds since 1.1.1970 -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>The global JavaScript function Number() coverts variables to numbers:</p>
+
+		<p id = "demo_6"></p>
+
+		<script>
+			document.getElementById("demo_6").innerHTML = Number(true) + "<br>" + Number(false) + "<br>" + Number(new Date()) + "<br>" + Number(" 10") + "<br>" + Number("10 ") + "<br>" + Number("10 6");
+		</script>
+	</body>
+</html>
+
+
+<!-- The parselnt() Method -->
+<!-- parseInt() parses a string and returns a whole number. Spaces 			 allowed. Only the first number is returned: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>The global JavaScript function parseInt() converts strings to numbers:</p>
+
+		<p id = "demo_7"></p>
+
+		<script>
+			document.getElementById("demo_7").innerHTML = parseInt("10") + "<br>" + parseInt("10.33") + "<br>" + parseInt("10 6") + "<br>" + parseInt("10 years") + "<br>" + parseInt("years 10");
+		</script>
+	</body>
+</html>
+
+
+<!-- The parseFloat() Method -->
+<!-- parseFloat() parses a string and returns a number. Space are 			 allowed. Only the first number is returned: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>The global JavaScript function parseFloat() converts string to numbers:</p>
+
+		<p id = "demo_8"></p>
+
+		<script>
+			document.getElementById("demo_8").innerHTML = parseFloat("10") + "<br>" + parseFloat("10.33") + "<br>" + parseFloat("10 6") + "<br>" + parseFloat("10 years") + "<br>" + parseFloat("years 10");
+		</script>
+	</body>
+</html>
+
+
+<!-- Number Properties -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_9"></p>
+
+		<script>
+			document.getElementById("demo_9").innerHTML = Number.MAX_VALUE;
+		</script>
+	</body>
+</html>
+
+<!-- Number properties belongs to the JavaScript's number object 			 wrapper called Number. -->
+<!-- using myNumber.MAX_VALUE, where myNumber is a variable, 				 expression, or value, will return undefined: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_10"></p>
+
+		<script>
+			var x = 6;
+			document.getElementById("demo_10").innerHTML = x.MAX_VALUE;
+		</script>
+	</body>
+</html>
