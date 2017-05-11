@@ -1,0 +1,409 @@
+Unlike many other programming languages, JavaScript does not 		 define different types of numbers, like integers, short, long, 	 floating-point etc. -->
+
+<!-- Precision -->
+<!-- Integers are considered accurate up to 15 digits -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Integers are considered accurate up to 15 digits.</p>
+
+		<button onclick="myFunction_1()">Try it</button>
+
+		<p id="demo_1"></p>
+
+		<script>
+		function myFunction_1() {
+		    var x = 999999999999999;
+		    var y = 9999999999999999;
+		    document.getElementById("demo_1").innerHTML = x + "<br>" + y;
+		}
+		</script>
+	</body>
+</html>
+
+<!-- The maximum number of decimals is 17, but floating point 			 arithmetic is not always 100% -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Floating point arithmetic is not always 100% accurate.</p>
+
+		<button onclick = "myFunction_2()">Try it</button>
+
+		<p id = "demo_2"></p>
+
+		<script>
+			function myFunction_2() {
+				var x = 0.2 + 0.1;
+				document.getElementById("demo_2").innerHTML = "0.2 + 0.1 = " + x;
+			}
+		</script>
+	</body>
+</html>
+
+<!-- To solve the problem above, it helps to multiply and divide -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Floating point arithmetic is not always 100% accurate.</p>
+		<p>But it helps to multiply and divide.</p>
+
+		<button onclick = "myFunction_3()">Try it</button>
+
+		<p id = "demo_3"></p>
+
+		<script>
+			function myFunction_3() {
+				var x = (0.2 * 10 + 0.1 * 10) / 10;
+
+				document.getElementById("demo_3").innerHTML = "0.2 + 0.1 = " + x;
+ 			}
+		</script>
+	</body>
+</html>
+
+
+<!-- Hexadecimal -->
+<!-- Never write a number with a leading zero (like 07). Some			 JavaScript versions interpret numbers as octal if they are 		 written with a leading zero. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Numeric constants, preceded by 0x, are interpreted as hexadecimal.</p>
+
+		<button onclick = "myFunction_4()">Try it</button>
+
+		<p id = "demo_4"></p>
+
+		<script>
+			function myFunction_4() {
+				document.getElementById("demo_4").innerHTML = "0xFF = " + 0xFF;
+			}
+		</script>
+	</body>
+</html>
+
+<!-- You can use the toString() method to output numbers as base 16 	 (hex), base 8 (octal), or base 2(binary) -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>The toString() method can output numbers as base 16 (hex), base 8 (octal), or base 2 (binary).</p>
+
+		<p id = "demo_5"></p>
+
+		<button onclick = "myFunction_5()">Try it</button>
+
+		<script>
+			function myFunction_5() {
+				var myNumber = 128;
+				document.getElementById("demo_5").innerHTML = "128 = " + myNumber + " Decimal, " + myNumber.toString(16) + " Hexadecimal, " + myNumber.toString(8) + "Octal, " + myNumber.toString(2) + " Binary."
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- Infinity -->
+<!-- Infinity (or -Infinity) is the value JavaScript will return	  if you calculate a number outside the largerst possible	 	   number. -->
+
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Infinity is returned if you calculate a number outside the largest possible number.</p>
+
+		<button onclick = "myFunction_6()">Try it</button>
+
+		<p id = "demo_6"></p>
+
+		<script>
+			function myFunction_6() {
+				var myNumber = 2, txt = "";
+				while (myNumber != Infinity) {
+					myNumber *= myNumber;
+					txt = txt + myNumber + "<br>"
+				}
+				document.getElementById("demo_6").innerHTML = txt;
+			}
+		</script>
+	</body>
+</html>
+
+<!-- Divide by 0 (zero) also generates Infinity -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Division by zero also generates Infinity.</p>
+
+		<button onclick = "myFunction_7()">Try it</button>
+
+		<p id = "demo_7"></p>
+
+		<script>
+			function myFunction_7() {
+				var x = 2 / 0, y = -2 / 0;
+				document.getElementById("demo_7").innerHTML = x + "<br>" + y;
+			}
+		</script>
+	</body>
+</html>
+
+<!-- Infinity is a number: typeof Infinity returns number. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Infinity is a Number.</p>
+
+		<button onclick = "myFunction_8()">Try it</button>
+
+		<p id = "demo_8"></p>
+
+		<script>
+			function myFunction_8() {
+				document.getElementById("demo_8").innerHTML = typeof Infinity;
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- NaN - Not a Number -->
+<!-- NaN is a JavaScript reserved word indicating that a number is 		not legal number. -->
+<!-- Trying to do arithmetic with a non-numeric string will result	   in NaN (Not a Number): -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>A number divided by a non-numeric string becomes NaN (Not a Number):</p>
+
+		<p id = "demo_9"></p>
+
+
+		<script>
+			document.getElementById("demo_9").innerHTML = 100 / "Apple";
+		</script>
+	</body>
+</html>
+
+<!-- However, if the string contains a numeric value, the result 	  will be a number: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>A number divided by a numeric string becomes a number:</p>
+
+		<p id = "demo_10"></p>
+
+		<script>
+			document.getElementById("demo_10").innerHTML = 100 / "10";
+		</script>
+	</body>
+</html>
+
+<!-- You can use the global JavaScript is Nan() to find out if a value 		  is a number -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_11"></p>
+
+		<script>
+			var x = 100 / "Apple";
+			document.getElementById("demo_11").innerHTML = isNaN(x);
+		</script>
+	</body>
+</html>
+
+<!-- Watch out for NaN. If you use NaN in a mathematical operation, the 	 result will also be NaN. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>If you use NaN in a mathematical operation, the result will also be NaN:</p>
+
+		<p id = "demo_12"></p>
+
+		<script>
+			var x = NaN, y = 5;
+			document.getElementById("demo_12").innerHTML = x + y;
+		</script>
+	</body>
+</html>
+
+<!-- Or the result might be a concatenation: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>If you use NaN in a mathematical operation, the result can be a concatenation:</p>
+
+		<p id = "demo_13"></p>
+
+		<script>
+			var x = NaN, y = "5";
+			document.getElementById("demo_13").innerHTML = x + y;
+		</script>
+	</body>
+</html>
+
+<!-- NaN is a number, and typeof NaN returns number: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>They typeof NaN is:</p>
+
+		<p id = "demo_14"></p>
+
+		<script>
+			document.getElementById("demo_14").innerHTML = typeof NaN;
+		</script>
+	</body>
+</html>
+
+
+<!-- Numbers Can be Objects -->
+<!-- Do not create Number objects. It slows down execution speeds. The 		 new keyword complicates the code. This can produce some unexpected		 results: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_15"></p>
+
+		<script>
+			var x = 123, y = new Number (123);
+
+			document.getElementById("demo_15").innerHTML = typeof x + "<br>" + typeof y;
+		</script>
+	</body>
+</html>
+
+<!-- When using the == operator, equal number are equal -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Never create numbers as objecst.</p>
+		<p>Numbers and objects cannot be safely comapred.</p>
+
+		<p id = "demo_16"></p>
+
+		<script>
+			var x = 500; // x is a number 
+			var y = new Number (500); // y is an object
+			document.getElementById("demo_16").innerHTML = (x == y);
+		</script>
+	</body>
+</html>
+
+<!-- WHen using the === operator, equal numbers are not equal, because the === operator expects equality in both type and value -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Never create numbers as objects.</p>
+		<p>Numbers and objects cannot be safely compared.</p>
+
+		<p id = "demo_17"></p>
+
+		<script>
+			var x = 500; // x is a number 
+			var y = new Number (500); // y is an object
+			document.getElementById("demo_17").innerHTML = (x === y);
+		</script>
+	</body>
+</html>
+
+<!-- Or even worse. Objects cannot be compared: -->
+<!-- Comparing two JavaScript objecst will always return false. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Never create numbers as objects.</p>
+		<p>JavaScript objects cannot be compared.</p>
+
+		<p id = "demo_18"></p>
+
+		<script>
+			var x = new Number(500); // x is an object
+			var y = new Number(500); // y is an object
+			document.getElementById("demo_18").innerHTML = (x == y);
+		</script>
+	</body>
+</html>
+
+
+
+
+<!-- Test Yourself with Exercises -->
+
+<!-- Exercise 1 -->
+<!-- Create a variable called myNumber, assign the value 50 to it, and display it. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+	<p id = "demo_19"></p>
+
+	<script>
+		var myNumber = 50;
+		document.getElementById('demo_19').innerHTML = myNumber;
+	</script>
+	</body>
+</html>
+
+
+<!-- Exercise 2 -->
+<!-- The value of z should be 11. Find out what's wrong and fix it. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_20"></p>
+
+		<script>
+			var x = 5;
+			var y = 6; //"6"
+			var z = x + y;
+			document.getElementById("demo_20").innerHTML = z;
+		</script>
+	</body>
+</html>
+
+
+<!-- Exercise 3 -->
+<!-- Divide x by 3 -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_21"></p>
+
+		<script>
+			var x = 50;
+			document.getElementById("demo_21").innerHTML = x / 3;
+		</script>
+	</body>
+</html>
+
+
+<!-- Exercise 4 -->
+<!-- Display the product of 8 * 5, using two variables x and y -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_21">Display the result here.</p>
+
+		<script>
+			var x = 8, y = 5;
+			document.getElementById("demo_21").innerHTML = x * y;
+		</script>
+	</body>
+</html>
