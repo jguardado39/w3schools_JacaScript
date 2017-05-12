@@ -1,1 +1,183 @@
 <!-- Displaying Dates -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_1"></p>
+
+		<script>
+			document.getElementById("demo_1").innerHTML = Date();
+		</script>
+	</body>
+</html>
+
+<!-- Using new Date(), creates a new date object with the current date 		 and time: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id="demo_2"></p>
+
+		<script>
+			var d = new Date();
+			document.getElementById("demo_2").innerHTML = d;
+		</script>
+	</body>
+</html>
+
+<!-- Using new Date(date string), creates a new date object from the 		 specified date and time: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_3"></p>
+
+		<script>
+			var d = new Date("October 13, 2014 11:13:00");
+			document.getElementById("demo_3").innerHTML = d;
+		</script>
+	</body>
+</html>
+
+<!-- Using new Date(number), creates a new date object as zero time plus 	  the number -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_4"></p>
+
+		<script>
+			var d = new Date(86400000);
+			document.getElementById("demo_4").innerHTML = d;
+		</script>
+	</body>
+</html>
+
+<!-- Using new Date(7 numbers), creates a new date object with the 			 specified date and time: -->
+<!-- The 7 numbers specify the year, month, day, hour, minute, second, 		 and milisecond, in that order: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_5"></p>
+
+		<script>
+			var d = new Date(99,5,24,11,33,30,0);
+			document.getElementById("demo_5").innerHTML = d;
+		</script>
+	</body>
+</html>
+
+<!-- Variants of the example  -->
+<!-- JavaScript counts months from 0 to 11. January is 0. December is 		 11. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_6"></p>
+
+		<script>
+			var d = new Date(99,5,24);
+			document.getElementById("demo_6").innerHTML = d;
+		</script>
+	</body>
+</html>
+
+
+<!-- Date Method -->
+<!-- When you display a date object in HTML, it is automatically converted to a string, with the toString() method. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_7"></p>
+
+		<script>
+			var d = new Date();
+			document.getElementById("demo_7").innerHTML = d.toString();
+		</script>
+	</body>
+</html>
+
+<!-- toUTCString() method converts a date to UTC string (a date display 	 standard) -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>The toUTCString() method converts a date to a UTC string (date display standard).</p>
+
+		<p id = "demo_8"></p>
+
+		<script>
+			var d = new Date();
+			document.getElementById("demo_8").innerHTML = d.toUTCString();
+		</script>
+	</body>
+</html>
+
+<!-- The toDateString() method converts a date to a more readable 			 format: -->
+<!-- Date objects are static. The computer time is tickling, but date 		 objects, once created, are not. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_9"></p>
+
+		<script>
+			var d = new Date();
+			document.getElementById("demo_9").innerHTML = d.toDateString();
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
+<!-- Test Yourself with Exercises! -->
+
+
+<!-- Exercises 1 -->
+<!-- Create a Date object to display the current date and time. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_10">Display the result here.</p>
+
+		<script>
+			document.getElementById("demo_10").innerHTML = new Date();
+		</script>
+	</body>
+</html>
+
+
+<!-- Exercise 2 -->
+<!-- Create a Date object with the following value: "January 10, 2015, 10:00:00"  -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_11"></p>
+
+		<script>
+			document.getElementById("demo_11").innerHTML = new Date("January 10, 2015 10:00:00");
+		</script>
+	</body>
+</html>
+
+
+<!-- Exercise 3 -->
+<!-- Use the toDateString() method to covert the date to a more readale format. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_12"></p>
+
+		<script>
+			document.getElementById("demo_12").innerHTML = new Date().toDateString();
+		</script>
+	</body>
+</html>
