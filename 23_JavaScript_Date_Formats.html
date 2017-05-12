@@ -12,3 +12,183 @@
 		</script>
 	</body>
 </html>
+
+
+<!-- ISO Dates (Year and Month) -->
+<!-- ISO dates can be written without specifying the date (YYYY-MM): -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript ISO Dates</h2>
+
+		<p id = "demo_2"></p>
+
+		<script>
+			document.getElementById("demo_2").innerHTML = new Date("2015-03");
+		</script>
+	</body>
+</html>
+
+
+<!-- ISO Dates (Only Year) -->
+<!-- ISO dates can be written without month and day (YYYY): -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript ISO Dates</h2>
+
+		<p id = "demo_3"></p>
+
+		<script>
+			document.getElementById("demo_3").innerHTML = new Date ("2015");
+		</script>
+	</body>
+</html>
+
+
+<!-- ISO Dates (Date-Time) -->
+<!-- ISO dates can be written with added hours, minutes, and seconds (YYYY-MM-DDTHH:MM:SSZ) -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript ISO Dates</h2>
+
+		<p>Separate date and time with a capital T.</p>
+
+		<p>Indicate UTC time with a captial Z.</p>
+
+		<p id = "demo_4"></p>
+
+		<script>
+			document.getElementById("demo_4").innerHTML = new Date("2015-03-25T12:00:00Z");
+		</script>
+	</body>
+</html>
+
+<!-- Omitting T or Z in a date-time string can give different result in 	 different browser. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript ISO Dates</h2>
+
+		<p>Modify the time relative to UTC by adding +HH:MM or subtraction -HH:MM to the time.</p>
+
+		<p id = "demo_5"></p>
+
+		<script>
+			document.getElementById("demo_5").innerHTML = new Date("2015-03-25T12:00:00-06:00");
+		</script>
+	</body>
+</html>
+
+
+<!-- JavaScript Short Dates -->
+<!-- Short dates are written with an "MM/DD/YYYY" syntax like this: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_6"></p>
+
+		<script>
+			document.getElementById("demo_6").innerHTML = new Date ("03/25/2015");
+		</script>
+	</body>
+</html>
+
+
+<!-- JavaScript Long Dates. -->
+<!-- Long dates are most often written with a "MMM DD YYYY" syntax like 	 this: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_7"></p>
+
+		<script>
+			document.getElementById("demo_7").innerHTML = new Date("Mar 25 2015");
+		</script>
+	</body>
+</html>
+
+<!-- Month and date can be in any order: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_8"></p>
+
+		<script>
+			document.getElementById("demo_8").innerHTML = new Date("25 Mar 2015");
+		</script>
+	</body>
+</html>
+
+<!-- And, month can be written in full (January), or abbreviated (Jan): 	 -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_9"></p>
+
+		<script>
+			document.getElementById("demo_9").innerHTML = new Date("January 25 2015");
+		</script>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_10"></p>
+
+		<script>
+			document.getElementById("demo_10").innerHTML = new Date ("Jan 25 2015");
+		</script>
+	</body>
+</html>
+
+<!-- Commas are ignored. Names are case insensitive: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_11"></p>
+
+		<script>
+			document.getElementById("demo_11").innerHTML = new Date("JANUARY, 25, 2015");
+		</script>
+	</body>
+</html>
+
+
+<!-- JavaScript Full Date -->
+<!-- JavaScript will accept date strings in "full JavaScript format" -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_12"></p>
+
+		<script>
+			document.getElementById("demo_12").innerHTML = new Date("Wed Mar 25 2015 09:56:24 GMT+0100 (W. Europe Standard Time)");
+		</script>
+	</body>
+</html>
+
+<!-- JavaScript will ignore errors both in the day name and in the time 	 parentheses: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_13"></p>
+
+		<script>
+			document.getElementById("demo_13").innerHTML = new Date("Fri Mar 25 2015 09:56:24 GMT+0100 (Tokyo Time)")
+		</script>
+	</body>
+</html>
