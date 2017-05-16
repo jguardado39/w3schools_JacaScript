@@ -1,0 +1,263 @@
+<!-- JavaScript Loops -->
+<!-- Loops are handy, if you want to run the same code over and over 		 again, each time with a different value. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript Loops</h2>
+
+		<p id = "demo_1"></p>
+
+		<script>
+			var cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+			var text = "";
+			var i;
+			for (i = 0; i < cars.length; i++) {
+				text += cars[i] + "<br>";
+			}
+			document.getElementById("demo_1").innerHTML = text;
+		</script>
+	</body>
+</html>
+
+
+<!-- The For loop -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript Loops</h2>
+
+		<p id = "demo_2"></p>
+
+		<script>
+			var text = "";
+			var i;
+			for (i = 0; i < 5; i++) {
+				text += "The number is " + i + "<br>";
+			}
+			document.getElementById("demo_2").innerHTML = text;
+		</script>
+	</body>
+</html>
+
+
+<!-- Statement 1 -->
+<!-- JavaScript doesn't care. Statement1 is optional. -->
+<!-- You can initiate many values in statement 1 (separated by comma): 		 -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+	<p id = "demo_3"></p>
+
+	<script>
+		var cars = ["BMW", "Volvo", "Saab", "Ford"];
+		var i, len, text;
+		for (i = 0, len = cars.length, text = ""; i < len; i++) {
+			text += cars[i] + "<br>";
+		}
+		document.getElementById("demo_3").innerHTML = text;
+	</script>
+	</body>
+</html>
+
+<!-- And you can omit statement 1 (like when your values are set before 	 the loop starts): -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_4"></p>
+
+		<script>
+			var cars = ["BMW", "Volvo", "Saab", "Ford"];
+			var i = 2;
+			var len = cars.length;
+			var text = "";
+
+			for (; i < len; i++) {
+				text += cars[i] + "<br>";
+			}
+			document.getElementById("demo_4").innerHTML = text;
+		</script>
+	</body>
+</html>
+
+
+<!-- Statement 2 -->
+<!-- JavaScript doesn't care. Statement 2 is also optional. -->
+<!-- If statement 2 returns true, the loop will start over again, if it 	 returns false, the loop will end. -->
+<!-- If you omit statement 2, you must provide a break inside the loop. 	 Otherwise the loop will never end. This will crash your brower. -->
+
+
+<!-- Statement 3 -->
+<!-- JavaScript doesn't care, and statement 3 is optional. -->
+<!-- Statement 3 can do anything like negative increment (i--), positive 	  increment (i = i + 15), or anything else. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_5"></p>
+
+		<script>
+			var cars = ["BMW", "Volvo", "Saab", "Ford"];
+
+			var i = 0;
+			var len = cars.length;
+			var text = "";
+
+			for (; i < len; ) {
+				text += cars[i] + "<br>";
+				i++;
+			}
+			document.getElementById("demo_5").innerHTML = text;
+		</script>
+	</body>
+</html>
+
+
+<!-- The For/In Loop -->
+<!-- The JavaScript for/in statement loops through the properties of an 	 object -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript Loops</h2>
+
+		<p>The for/in statement loops through the properties of an object.</p>
+
+		<p id = "demo_6"></p>
+
+		<script>
+			var txt = "";
+			var person = {fname: "John", lname: "Doe", age: 25};
+			var x;
+			for (x in person) {
+				txt += person[x] + " ";
+			}
+			document.getElementById("demo_6").innerHTML = txt;
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
+
+<!-- Test Yourself with Exercises! -->
+
+
+<!-- Exercise 1 -->
+<!-- In the for loop, change num1 to 0 and num2 to 10 and run the code. 	 -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_7"></p>
+
+		<script>
+			var i;
+			for (i = 0; i < 10; i++) {
+				document.getElementById("demo_7").innerHTML += i + "<br>";
+			}
+		</script>
+	</body>
+</html>
+
+<!-- Exercise 2 -->
+<!-- Make the loop start counting from 5 instead of 0: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_8"></p>
+
+		<script>
+			var i;
+			for (i = 5; i < 10; i++) {
+				document.getElementById("demo_8").innerHTML += i + "<br>";
+			}
+		</script>
+	</body>
+</html>
+
+<!-- Exercise 3 -->
+<!-- Make the loop start counting from 5. Count up to (including) 50, 		 and count only every fifth number. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_9"></p>
+
+		<script>
+			var i;
+			for (i = 5; i <= 50; i += 5) {
+				document.getElementById("demo_9").innerHTML += i + "<br>";
+			}
+		</script>
+	</body>
+</html>
+
+<!-- Exercise 4 -->
+<!-- Make the start counting dowards from 10 and stop at 1.
+	 THe ouput should be 10 9 8 7 6 5 4 3 2 1 with line breaks. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_10"></p>
+
+		<script>
+			var i;
+			for (i = 10; i > 0; i--) {
+				document.getElementById("demo_10").innerHTML += i + "<br>";
+			}
+		</script>
+	</body>
+</html>
+
+<!-- Exercise 5 -->
+<!-- Set the counter variable (i) to 0.
+	 Run the loop as long as i is less than the length of the food array. Increment i by 1. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_11"></p>
+
+		<script>
+			var text = "";
+			var food = ["Pizza", "Beans", "Tacos", "Fish", "Chicken"];
+			var i;
+
+			for (i = 0; i < food.length; i++) {
+				text += "I love " + food[i] + "<br>";
+			}
+			document.getElementById("demo_11").innerHTML = text;
+		</script>
+	</body>
+</html>
+
+<!-- Exercise 6 -->
+<!-- In this exercise, you are going to create a for loop from scratch. 	 We have already created the counter variable i for you, and a text 	 variable for output.
+	 Your task is to create a FOR LOOP that output the number 1 3 5 7 9 while line breaks between each number.
+	 WARNING: Remember to increase the variable used in the condition to avoid infinite loops (will crash your browser).-->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_12"></p>
+
+		<script>
+			var text = "";
+			var i;
+
+			for (i = 1; i < 10; i += 2) {
+				text += i + "<br>";
+			}
+			document.getElementById("demo_12").innerHTML = text;
+		</script>
+	</body>
+</html>
