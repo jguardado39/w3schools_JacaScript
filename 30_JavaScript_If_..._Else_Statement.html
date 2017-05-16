@@ -1,0 +1,202 @@
+<!-- The if Statement -->
+<!-- Use the if statement to specify a block of JavaScript code to be 		 executed if a condition is true. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Display "Good day!" if the hour is less than 18:00</p>
+
+		<p id = "demo_1"></p>
+
+		<script>
+			if (new Date().getHours() < 18) {
+				document.getElementById("demo_1").innerHTML = "Good day!";
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- The else Statement -->
+<!-- Use the else statement to specify a block of code to be executed if 	  the condition is false. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Click the button to display a time-based greeting:</p>
+
+		<button onclick = "myFunction_1()">Try it</button>
+
+		<p id = "demo_2"></p>
+
+		<script>
+			function myFunction_1() {
+				var hour = new Date().getHours();
+				var greeting;
+				if (hour < 18) {
+					greeting = "Good day";
+				} else {
+					greeting = "Good evening";
+				}
+
+				document.getElementById("demo_2").innerHTML = greeting;
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- The else if Statement -->
+<!-- Use the else if statement to specify a new condition if the first 		 conditino is false. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Click the button to get a time-based greeting:</p>
+
+		<button onclick = "myFunction_2()">Try it</button>
+
+		<p id = "demo_3"></p>
+
+		<script>
+			function myFunction_2() {
+				var greeting;
+				var time = new Date().getHours();
+				if (time < 10) {
+					greeting = "Good morning";
+				} else if (time < 20) {
+					greeting = "Good day";
+				} else {
+					greeting = "Good evening"
+				}
+			document.getElementById("demo_3").innerHTML = greeting;
+			}
+		</script>
+	</body>
+</html>
+
+
+
+
+
+<!-- Test Yourself with Exercises! -->
+
+
+<!-- Exercise 1 -->
+<!-- Use the if statement to output some text if 5 is greater than 2 -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_4"></p>
+
+		<script>
+			if (5 > 2) {
+			document.getElementById("demo_4").innerHTML = "Well done!";
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- Exercise 2 -->
+<!-- 1. Write an if statement with the following condition: 10 is 			 greater than 5.
+	 2. If the condition is true, display "I di it!" -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_5"></p>
+
+		<script>
+			if (10 > 5) {
+				document.getElementById("demo_5").innerHTML = "I did it!";
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- Exercise 3 -->
+<!-- Change the value of the variable firstName to make the if 				 statement run. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_6"></p>
+
+		<script>
+			var firstName = "John"//"Greg";
+
+			if (firstName === "John") {
+
+				document.getElementById("demo_6").innerHTML = "Hello John!";
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- Exercise 4 -->
+<!-- Add an else statement to display "You're not John!"  -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_7">Display the result here.</p>
+
+		<script>
+			var firstName = "Greg";
+
+			if (firstName === "John") {
+				document.getElementById("demo_7").innerHTML = "Hello John!";
+			} else {
+				document.getElementById("demo_7").innerHTML = "You're not John!";
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- Exercise 5 -->
+<!-- Write an if/else statement with the following condition:
+	 If the variable age is greater than 18, output "Old enough", otherwise output "Too young." -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_8"></p>
+
+		<script>
+			var age = 25;
+			if (age > 18) {
+				document.getElementById("demo_8").innerHTML = "Old enough";
+			} else {
+				document.getElementById("demo_8").innerHTML = "Too young.";
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- Exercise 6 -->
+<!-- The if/else statement does not work. Try to fix it.  -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_9"></p>
+
+		<script>
+			var greeting;
+			var hour = new Date().getHours();
+
+			if (hour < 18) {
+				greeting = "Good day";
+			} else {
+				greeting = "Good evening";
+			}
+			document.getElementById("demo_9").innerHTML = greeting;
+		</script>
+	</body>
+</html>
