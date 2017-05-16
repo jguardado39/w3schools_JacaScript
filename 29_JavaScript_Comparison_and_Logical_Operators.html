@@ -1,0 +1,161 @@
+<!-- Conditional (Ternary) Operator -->
+<!-- JavaScript also contains a conditional operator that assigns a 		 value to a variable based on some condition. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Input your age and click the button:</p>
+
+		<input id = "age_1" value = "18" />
+
+		<button onclick = "myFunction_1()">Try it</button>
+
+		<p id = "demo_1"></p>
+
+		<script>
+			function myFunction_1() {
+				var age, voteable;
+				age = document.getElementById("age").value;
+				voteable = (age < 18) ? "Too young" : "Old enough";
+
+				document.getElementById("demo_1").innerHTML = voteable + " to vote.";
+			}
+		</script>
+	</body>
+</html>
+
+<!-- To secure a proper results, variables should be converted to the 		 proper type before comparison: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript Comparisons</h2>
+
+		<p>Input your age and click the button:</p>
+
+		<input id = "age_2" value = "18" />
+
+		<button onclick = "myFunction_2()">Try it</button>
+
+		<p id = "demo_2"></p>
+
+		<script>
+		function myFunction_2() {
+	    var age, voteable;
+	    age = Number(document.getElementById("age_1").value);
+	    if (isNaN(age)) {
+	        voteable = "Input is not a number";
+	    } else {
+	        voteable = (age < 18) ? "Too young" : "Old enough";
+	    }
+	    document.getElementById("demo_2").innerHTML = voteable;
+		}
+		</script>
+	</body>
+</html>
+
+
+
+
+
+<!-- Test Yourself with Exercises! -->
+
+<!-- Exercise 1 -->
+<!-- Choose the correct comparison operator to display "true", when: 5 		 is less than 7. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_3"></p>
+
+		<script>
+			document.getElementById("demo_3").innerHTML = 5 < 7;
+		</script>
+	</body>
+</html>
+
+
+<!-- Exercise 2 -->
+<!-- Choose the correct comparison operator to display "true", when: 10 	 is greater than 7. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_4">Display the result here.</p>
+
+		<script>
+			document.getElementById("demo_4").innerHTML = 10 > 7;
+		</script>
+	</body>
+</html>
+
+
+<!-- Exercise 3 -->
+<!-- Choose the correct comparison operator to display "true", when: 1- is equal to 10. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_5">Display the result here.</p>
+
+		<script>
+			document.getElementById("demo_5").innerHTML = 10 == 10;
+		</script>
+	</body>
+</html>
+
+
+<!-- Exercise 4 -->
+<!-- Choose the correct comparison operator to display "true" , when: 		 10 is NOT equal to 8. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_6">Display the reuslt here.</p>
+
+		<script>
+			document.getElementById("demo_6").innerHTML = 10 != 8;
+		</script>
+	</body>
+</html>
+
+<!-- Exercise 5 -->
+<!-- If the variable age is a value below 18, the value of the variable 	 voteable should be "Too young", otherwise the value of voteable 		 should be "Old enough" -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		Age: <input type = "number" id = "age_3" value = "18">
+		<button onclick = "checkAge()">Check Age</button>
+		<p id = "demo_7"></p>
+
+		<script>
+			function checkAge() {
+				var age = document.getElementById("age_3").value;
+				var voteable = (age < 18) ? "Too young" : "Old enough";
+				document.getElementById("demo_7").innerHTML = voteable + " to vote.";
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- Exercise 6 -->
+<!-- If the variable firstName is equal to "John", the value of the 		 variable result show be "Hello John!", otherwise the value of  		 result should be "You're not John!" -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		First Name: <input type = "text" id = "fname" value = "John">
+		<button onclick = "checkName_1()">Check Name</button>
+		<p id = "demo_8"></p>
+
+		<script>
+			function checkName_1() {
+				var firstName = document.getElementById("fname").value;
+				var result = (firstName === "John") ? "Hello John!" : "You're not John!";
+				document.getElementById("demo_8").innerHTML = result;
+			}
+		</script>
+	</body>
+</html>
