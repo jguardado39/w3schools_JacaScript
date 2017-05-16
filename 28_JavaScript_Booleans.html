@@ -1,0 +1,285 @@
+<!-- The Boolean() Function -->
+<!-- You can use the Boolean() function to find out if an expression (or 	  a variable) is true: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Display the value of Boolean (10 > 9):</p>
+
+		<button onclick = "myFunction_1()">Try it</button>
+
+		<p id = "demo_1"></p>
+
+		<script>
+			function myFunction_1() {
+
+				document.getElementById("demo_1").innerHTML = Boolean(10 > 9);
+			}
+		</script>
+	</body>
+</html>
+
+<!-- Or even easier: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Display the value of 10 > 9:</p>
+
+		<button onclick = "myFunction_2()">Try it</button>
+
+		<p id = "demo_2"></p>
+
+		<script>
+			function myFunction_2() {
+				document.getElementById("demo_2").innerHTML = 10 > 9;
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- Everything With a "Real" Value is True -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_3"></p>
+
+		<script>
+			var b1 = Boolean(100);
+			var b2 = Boolean(3.14);
+			var b3 = Boolean(-15);
+			var b4 = Boolean("Hello");
+			var b5 = Boolean('false');
+			var b6 = Boolean(1 + 7 + 3.14);
+
+			document.getElementById("demo_3").innerHTML = "100 is "+ b1 + "<br>" + "3.14 is " + b2 + "<br>" + "-15 is " + b3 + "<br>" + "Any (not empty) string is " + b4 + "<br>" + "Even the string 'false' is " + b5 + "<br>" + "Any expression (except zero) is " + b6;
+		</script>
+	</body>
+</html>
+
+
+<!-- Everything Without a "Real" is False -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Display the Boolean value of 0:</p>
+
+		<button onclick = "myFunction_3()">Try it</button>
+
+		<p id = "demo_4"></p>
+
+		<script>
+			function myFunction_3() {
+				var x = 0;
+
+				document.getElementById("demo_4").innerHTML = Boolean(x);
+			}
+		</script>
+	</body>
+</html>
+
+<!-- The Boolean value of -0 (minus zero) is false: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Display the Boolean value of -0:</p>
+
+		<button onclick = "myFunction_4()">Try it</button>
+
+		<p id = "demo_5"></p>
+
+		<script>
+			function myFunction_4() {
+				var x = -0;
+
+				document.getElementById("demo_5").innerHTML = Boolean(x);
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- The Boolean value of "" (empty string) is false -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Display the Boolean value of "":</p>
+
+		<button onclick = "myFunction_5()">Try it</button>
+
+		<p id = "demo_6"></p>
+
+		<script>
+			function myFunction_5() {
+				var x = "";
+				document.getElementById("demo_6").innerHTML = Boolean(x);
+			}
+		</script>
+	</body>
+</html>
+
+<!-- The Boolean value of undefined is false: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Display the Boolean value of undefined:</p>
+
+		<button onclick = "myFunction_6()">Try it</button>
+
+		<p id = "demo_7"></p>
+
+		<script>
+			function myFunction_6() {
+				var x;
+
+				document.getElementById("demo_7").innerHTML = Boolean(x);
+			}
+		</script>
+	</body>
+</html>
+
+<!-- The Boolean valule of null is false: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Display the Boolean value of null:</p>
+
+		<button onclick = "myFunction_7()">Try it</button>
+
+		<p id = "demo_8"></p>
+
+		<script>
+			function myFunction_7() {
+				var x = null;
+
+				document.getElementById("demo_8").innerHTML = Boolean(x);
+			}
+		</script>
+	</body>
+</html>
+
+<!-- The Boolean value of false is (you guessed it) false: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Display the Boolean value of false:</p>
+
+		<button onclick = "myFunction_8()">Try it</button>
+
+		<p id = "demo_9"></p>
+
+		<script>
+			function myFunction_8() {
+				var x = false;
+
+				document.getElementById("demo_9").innerHTML = Boolean(x);
+			}
+		</script>
+	</body>
+</html>
+
+<!-- The Boolean value of NaN is false: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Display the Boolean value of NaN:</p>
+
+		<button onclick = "myFunction_9()">Try it</button>
+
+		<p id = "demo_10"></p>
+
+		<script>
+			function myFunction_9() {
+				var x = 10 / "H";
+
+				document.getElementById("demo_10").innerHTML = Boolean(x);
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- Boolean Can be Objects -->
+<!-- Do not create Boolean objects. It slows down execution speed. The 		 new keyword complicates the code. This can produce some unexpected 	 results: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Never create boolean as objects.</p>
+
+		<p>Booleans and objects cannot be safely compared.</p>
+
+		<p id = "demo_11"></p>
+
+		<script>
+			var x = false;               // x is a boolean
+			var y = new Boolean(false); // y is an object
+			document.getElementById("demo_11").innerHTML = typeof x + "<br>" + typeof y;
+		</script>
+	</body>
+</html>
+
+<!-- When using the == operator, equal booleans are equal: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Never create booleans as objects.</p>
+
+		<p>Booleans and objects cannot be safely compared.</p>
+
+		<p id = "demo_12"></p>
+
+		<script>
+			var x = false;              // x is a boolean
+			var y = new Boolean(false); // y is a boolean
+			document.getElementById("demo_12").innerHTML = (x == y);
+		</script>
+	</body>
+</html>
+
+<!-- When using the === operator, equal booleans are not equal, because 	 the === operator expects equality in both type and value. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Never create booleans as objects.</p>
+		<p>Booleans and objects cannot be safely compared.</p>
+
+		<p id = "demo_13"></p>
+
+		<script>
+			var x = false;              // x is a number
+			var y = new Boolean(false)  // y is an object
+			document.getElementById("demo_13").innerHTML = (x === y);
+		</script>
+	</body>
+</html>
+
+<!-- Or even worse. Objects cannot be compared: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Never create booleans as objects.</p>
+
+		<p>Booleans and objects cannot be safely compared.</p>
+
+		<p id = "demo_14"></p>
+
+		<script>
+			var x = new Boolean(false); // x is an object
+			var y = new Boolean(false); // y is an object
+			document.getElementById("demo_14").innerHTML = (x == y);
+		</script>
+	</body>
+</html>
