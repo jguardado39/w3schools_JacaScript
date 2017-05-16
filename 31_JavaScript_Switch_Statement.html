@@ -1,0 +1,264 @@
+<!-- The JavaScript Switch Statement -->
+<!-- Use the switch statement to select one of many blocks of code to be 	  executed. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_1"></p>
+
+		<script>
+			var day;
+			switch (new Date().getDay()) {
+				case 0:
+					day = "Sunday";
+					break;
+				case 1:
+					day = "Monday";
+					break;
+				case 2:
+					day = "Tuesday";
+					break;
+				case 3:
+					day = "Wednesday";
+					break;
+				case 4:
+					day = "Thursday";
+					break;
+				case 5:
+					day = "Friday";
+					break;
+				case 6:
+					day = "Saturday";
+					break;
+			}
+			document.getElementById("demo_1").innerHTML = "Today is " + day;
+		</script>
+	</body>
+</html>
+
+<!-- The default Keyword -->
+<!-- The default keyword specifies the code to run if there is no case 		 match: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_2"></p>
+
+		<script>
+			var text;
+			switch (new Date().getDay()) {
+				case 6:
+					text = "Today is Saturday";
+					break;
+				case 0:
+					text = "Today is Sunday";
+					break;
+				default:
+					text = "Looking forward to the Weekend";
+			}
+			document.getElementById("demo_2").innerHTML = text;
+		</script>
+	</body>
+</html>
+
+<!-- The default case does not have to be the last case in a swtich 		 block: -->
+<!-- If the default is not the last case in the switch block, remember 		 to end the default case with a break. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_3"></p>
+
+		<script>
+			var text;
+			switch (new Date().getDay()) {
+				default:
+					text = "Looking forward to the Weekend";
+					break;
+				case 6:
+					text = "Today is Saturday";
+					break;
+				case 0:
+					text = "Today is Sunday";
+			}
+			document.getElementById("demo_3").innerHTML = text;
+		</script>
+	</body>
+</html>
+
+
+<!-- Common Code Blocks -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_4"></p>
+
+		<script>
+			var text;
+			switch (new Date().getDay()) {
+				case 4:
+				case 5:
+					text = "Soon it is Weekend";
+					break;
+				case 0:
+				case 6:
+					text = "It is Weekend";
+					break;
+				default:
+					text = "Looking forward to the Weekend";
+			}
+			document.getElementById("demo_4").innerHTML = text;
+		</script>
+	</body>
+</html>
+
+
+
+
+
+<!-- Test Yourself with Exercises! -->
+
+
+<!-- Exercise 1 -->
+<!-- The switch statement is missing a case for "Apple". Add it, and 		 set text to "How you like them apples?"  -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<input id = "myInput" type = "text" value = "Apple">
+		<button onclick = "checkFruit()">Check Fruit</button>
+		<p id = "demo_5"></p>
+
+		<script>
+			function checkFruit() {
+				var text;
+				var fruits = document.getElementById("myInput").value;
+
+				switch (fruits) {
+					case "Banana":
+						text = "Banana is good!";
+						break;
+					case "Orange":
+						text = "I am not a fan of orange.";
+						break;
+					case "Apple":
+						text = "How you like them apples?";
+						break;
+					default:
+						text = "I have never heard of that fruit.";
+				}
+				document.getElementById("demo_5").innerHTML = text;
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- Exercise 2 -->
+<!-- The switch statement is missing a default case.  
+	 Add it at the bottom of the switch statement, and set text to "I have never heard of that fruit.-->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<input id = "myInput_1" type = "text" value = "Tutti Frutti">
+		<button onclick = "checkFruit_1()">Check Fruit</button>
+
+		<p id = "demo_6"></p>
+
+		<script>
+			function checkFruit_1() {
+				var text;
+				var fruits = document.getElementById("myInput_1").value;
+
+				switch (fruits) {
+					case "Banana":
+						text = "Banana is good!";
+						break;
+					case "Orange":
+						text = "I am not a fan of orange.";
+						break;
+					case "Apple":
+						text = "How you like them apples?";
+						break;
+					default:
+						text = "I have never heard of that fruit.";
+				}
+			document.getElementById("demo_6").innerHTML = text;
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- Exercise 3 -->
+<!-- The switch statement does not work. Try to fix it. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<input id = "myInput_2" type = "text" value = "Orange">
+		<button onclick = "checkFruit_2()">Check Fruit</button>
+		<p id = "demo_7"></p>
+
+		<script>
+			function checkFruit_2() {
+				var text;
+				var fruits = document.getElementById("myInput_2").value;
+
+				switch(fruits) {
+					case "Banana":
+						text = "Banana is good!";
+						break;
+					case "Orange":
+						text = "I am not a fan of orange.";
+						break;
+					case "Apple":
+						text = "How you like them apples?";
+						break;
+					default:
+						text = "I have never heard of that fruit.";
+				}
+			document.getElementById("demo_7").innerHTML = text;
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- Exercise 4 -->
+<!-- Finish the switch statement. Add the following cases: BMW, Ford, 		 and Peugeot.
+	 Set the value of the variable text to: "German car" for BMW. "American car" for Ford. "French car" for Peugeot.  
+	 Also add a default case where the text value is "Unknown car name."-->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<input id = "myInput_3" type = "text" value = "BMW">
+		<button onclick = "checkCar()">Check Car</button>
+		<p id = "demo_8"></p>
+
+		<script>
+			function checkCar() {
+				var text;
+				var favCar = document.getElementById("myInput_3").value;
+
+				switch (favCar) {
+					case "BMW":
+						text = "German car";
+						break;
+					case "Ford":
+						text = "American car";
+						break;
+					case "Peugeot":
+						text = "French car";
+						break;
+					default:
+						text = "Unknown car name";
+				}
+			document.getElementById("demo_8").innerHTML = text;
+			}
+		</script>
+	</body>
+</html>
