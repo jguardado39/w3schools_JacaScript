@@ -1,0 +1,190 @@
+<!-- The Break Statement -->
+<!-- The break statement breaks the loop and continues executing the 		 code after the loop (if any): -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>A loop with a break.</p>
+
+		<p id = "demo_1"></p>
+
+		<script>
+			var text = "";
+			var i;
+			for (i = 0; i < 10; i++) {
+				if (i === 3) { break; }
+				text += "The number is " + i + "<br>";
+			}
+			document.getElementById("demo_1").innerHTML = text;
+		</script>
+	</body>
+</html>
+
+
+<!-- The Continue Statement -->
+<!-- The continue statement breaks one iteration (in the loop), if a 		 specified condition occurs, and continues with the next iteration 		 in the loop. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>A loop which will skip the step where i = 3.</p>
+
+		<p id = "demo_2"></p>
+
+		<script>
+			var text = "";
+			var i;
+			for (i = 0; i < 10; i++) {
+				if (i === 3) { continue; }
+				text += "The number is " + i + "<br>";
+			}
+			document.getElementById("demo_2").innerHTML = text;
+		</script>
+	</body>
+</html>
+
+<!-- A code block is a block of code between { and } -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_3"></p>
+
+		<script>
+			var cars = ["BMW", "Volvo", "Saab", "Ford"];
+			var text = "";
+
+			list : {
+				text += cars[0] + "<br>";
+				text += cars[1] + "<br>";
+				text += cars[2] + "<br>";
+				break list;
+				text += cars[3] + "<br>";
+				text += cars[4] + "<br>";
+				text += cars[5] + "<br>";
+			}
+			document.getElementById("demo_3").innerHTML = text;
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
+<!-- Test Yourself with Exercises! -->
+
+
+<!-- Exercise 1 -->
+<!-- Use the break statement to stop the loop at 5. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_4"></p>
+
+		<script>
+			var text = "";
+			var i;
+			for (i = 1; i < 10; i++) {
+				if (i === 5) { break; }
+				document.getElementById("demo_4").innerHTML += i + "<br>";
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- Exercise 2 -->
+<!-- Use the continue statement to skip the number 5 in the loop.  -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_5"></p>
+
+		<script>
+			var text = "";
+			var i;
+			for (i = 1; i < 10; i++) {
+				if (i === 5) { continue; }
+				document.getElementById("demo_5").innerHTML += i + "<br>";
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- Exercise 3 -->
+<!-- Use the continue statement to skip the numberr 5 AND 7 in the 			 loop. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_6"></p>
+
+		<script>
+			var text = "";
+			var i;
+			for (i = 1; i < 10; i++) {
+				if (i === 5 || i === 7) { continue; }
+				document.getElementById("demo_6").innerHTML += i + "<br>";
+			}
+		</script>
+	</body>
+</html>
+
+<!-- Exericse 4 -->
+<!-- The switch statement does not work. Try to fix it -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<input id = "myInput" type = "text" value = "BMW">
+		<button onclick = "checkCar()">Check Car</button>
+		<p id = "demo_7"></p>
+		<script>
+			function checkCar() {
+				var text;
+				var favCar = document.getElementById("myInput").value;
+
+				switch(favCar) {
+					case "BMW":
+						text = "German car";
+						break;
+					case "Ford":
+						text = "American car";
+						break;
+					case "Peugot":
+						text = "French car";
+						break;
+					default:
+						text = "Unknown car name"
+				}
+			document.getElementById("demo_7").innerHTML = text;
+			}
+		</script>
+	</body>
+</html>
+
+<!-- Exercise 5 -->
+<!-- Use the continu statement to not output the array's element "Saab" 	 -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_8"></p>
+
+		<script>
+			var cars = ["BMW", "Volvo", "Saab", "Ford"];
+			var text = ""
+			var i;
+			for (i = 0; i < cars.length; i++) {
+				if (cars[i] === "Saab") { continue; }
+				text += cars[i] + "<br>";
+			}
+			document.getElementById("demo_8").innerHTML = text;
+		</script>
+	</body>
+</html>

@@ -1,0 +1,259 @@
+<!-- The typeof Operator -->
+<!-- You can use the typeof opeartor to find the data type of a 			 JavaScript variable. -->
+<!-- You cannot use typeof to determine if a JavaScript object is an 		 array (or a date) -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>The JavaScript typeof Operator</h2>
+
+		<p>The typeof operator returns the type of a variable, object, function or expression.</p>
+
+		<p id="demo_1"></p>
+
+		<script>
+			document.getElementById("demo_1").innerHTML = 
+		    typeof "john" + "<br>" +
+		    typeof 3.14 + "<br>" +
+		    typeof NaN + "<br>" +
+		    typeof false + "<br>" +
+		    typeof [1,2,3,4] + "<br>" +
+		    typeof {name:'john', age:34} + "<br>" +
+		    typeof new Date() + "<br>" +
+		    typeof function () {} + "<br>" +
+		    typeof myCar + "<br>" +
+		    typeof null;
+		</script>
+	</body>
+</html>
+
+
+<!-- The constructor Property -->
+<!-- The constructor property returns the constructor function for all 		 JavaScript variables. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>The JavaScript constructor Property</h2>
+
+		<p>The constructor property returns the constructor function for a variable or an object.</p>
+
+		<p id = "demo_2"></p>
+
+		<script>
+			document.getElementById("demo_2").innerHTML = 
+				"john".constructor + "<br>" +
+				(3.14).constructor + "<br>" +
+				false.constructor + "<br>" +
+				[1,2,3,4].constructor + "<br>" +
+				{name: 'john', age: 34}.constructor + "<br>" +
+				new Date().constructor + "<br>" +
+				function() {}.constructor;
+		</script>
+	</body>
+</html>
+
+<!-- You can check the constructor property to find out if an object is 	  an Array (contains the word "Array"): -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript Arrays</h2>
+
+		<p>This "home made" isArray() function returns true when used on an array:</p>
+
+		<p id = "demo_3"></p>
+
+		<script>
+			var fruits = ["Banana", "Orange", "Apple", "Mango"];
+			document.getElementById("demo_3").innerHTML = isArray(fruits);
+
+			function isArray(myArray) {
+    			return myArray.constructor.toString().indexOf("Array") > -1;
+			}	
+		</script>
+	</body>
+</html>
+
+<!-- Or even simplier, you can check if the object is an Array function: 	  -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript Array Object</h2>
+		<p>This "home made" isArray() function returns true when used on an array:</p>
+
+		<p id = "demo_4"></p>
+
+		<script>
+			var fruits = ["Banana", "Orange", "Apple", "Mango"];
+			document.getElementById("demo_4").innerHTML = isArray(fruits);
+
+			function isArray(myArray) {
+				return myArray.constructor === Array;
+			}
+		</script>
+	</body>
+</html>
+
+<!-- You can check the constructor property to find out if an object is 	  a Date (contains the word "Date"): -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript Date Object</h2>
+
+		<p>This "home made" isDate() function returns true when used on an date:</p>
+
+		<p id = "demo_5"></p>
+
+		<script>
+			var myDate = new Date();
+			document.getElementById("demo_5").innerHTML = isDate(myDate);
+
+			function isDate(myDate) {
+				return myDate.constructor.toString().indexOf("Date") > -1;
+			}
+		</script>
+	</body>
+</html>
+
+<!-- Or even simplier, you can check if the object is a Date function: 		 -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript Date Object</h2>
+
+		<p>This "home made" isDate() function returns true when used on an date:</p>
+
+		<p id = "demo_5"></p>
+
+		<script>
+			var myDate = new Date();
+			document.getElementById("demo_5").innerHTML = isDate_1(myDate);
+
+			function isDate_1(myDate) {
+    			return myDate.constructor === Date;
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- JavaScript Type Conversion -->
+<!-- Converting Number to Strings -->
+<!-- The global method String() can convert numbers to strings.-->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>The JavaScript String() Method</h2>
+
+		<p>The String() method can convert a number to a string.</p>
+
+		<p id = "demo_6"></p>
+
+		<script>
+			var x = 123;
+			document.getElementById("demo_6").innerHTML = 
+				String(x) + "<br>" + 
+				String(123) + "<br>" +
+				String(100 + 23);
+		</script>
+	</body>
+</html>
+
+<!-- The Number method toString() does the same. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>The JavaScript toString() Method</h2>
+
+		<p>The toString() method converts a number to a string.</p>
+
+		<p id = "demo_7"></p>
+
+		<script>
+			var x = 123;
+			document.getElementById("demo_7").innerHTML = 
+				x.toString() + "<br>" + 
+				(123).toString() + "<br>" +
+				(100 + 23).toString();
+		</script>
+	</body>
+</html>
+
+
+<!-- The Unary + Operator -->
+<!-- The unary + operator can be used to convert a variable to a 			 number: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>The JavaScript typeof Operator</h2>
+
+		<p>The typeof opeartor returns the type of a variable or expression.</p>
+
+		<button onclick = "myFunction_1()">Try it</button>
+
+		<p id = "demo_8"></p>
+
+		<script>
+			function myFunction_1() {
+				var y = "5";
+				var x = + y;
+
+				document.getElementById("demo_8").innerHTML =
+					typeof y + "<br>" + typeof x;
+			}
+		</script>
+	</body>
+</html>
+
+<!-- If the variable cannot be converted, it will still become a 			 number, but with the value NaN (Not a number): -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>The JavaScript typeof Operator</h2>
+
+		<p>The typeof operator returns the type of a variable or expression.</p>
+
+		<button onclick = "myFunction_2()">Try it</button>
+
+		<p id = "demo_9"></p>
+
+		<script>
+			function myFunction_2() {
+				var y = "John";
+				var x = + y;
+
+				document.getElementById("demo_9").innerHTML = 
+					typeof x + "<br>" + x;
+			}
+		</script>
+	</body>
+</html>
+
+<!-- Automatic Type Conversion -->
+<!-- When JavaScript tries to operate on a "wrong" date type, it will 		 try to convert the value to a "right" type. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_10"></p>
+
+		<script>
+			var x = [];
+			document.getElementById("demo_10").innerHTML = 
+			(5 + null) + "<br>" +
+			("5" + null) + "<br>" +
+			("5" + 2) + "<br>" +
+			("5" - 2) + "<br>" +
+			("5" * "2") + "<br>" +
+			("5" / "2") + "<br>";
+		</script>
+	</body>
+</html>
