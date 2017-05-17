@@ -1,0 +1,190 @@
+<!-- The While Loop -->
+<!-- If you forget to increase the variable used in the condition, the 		 loop will never end. This will crash your browser. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript while</h2>
+
+		<p id = "demo_1"></p>
+
+		<script>
+			var text = "";
+			var i = 0;
+			while (i < 10) {
+				text += "<br>The number is " + i;
+				i ++;
+			}
+			document.getElementById("demo_1").innerHTML = text;
+		</script>
+	</body>
+</html>
+
+<!-- The Do/While Loop -->
+<!-- Do not forget to increase the variable used in the condition, 			 otherwise the loop will never end! -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript do ... while</h2>
+
+		<p id = "demo_2"></p>
+
+		<script>
+			var text = "";
+			var i = 0;
+
+			do {
+				text += "<br>The number is " + i;
+				i++;
+			}
+			while (i < 10);
+
+			document.getElementById("demo_2").innerHTML = text;
+		</script>
+	</body>
+</html>
+
+
+<!-- Comparing For and While -->
+<!-- The loop in this example uses a for loop to collect the car names 		 from the cars array: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_3"></p>
+
+		<script>
+			var cars = ["BMW", "Volvo", "Saab", "Ford"];
+			var i = 0;
+			var text = "";
+			for (;cars[i];) {
+				text += cars[i] + "<br>";
+				i++;
+			}
+			document.getElementById("demo_3").innerHTML = text;
+		</script>
+	</body>
+</html>
+
+<!-- The loop in this example uses a while loop to collect the car names 	  from the cars array: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_4"></p>
+
+		<script>
+			var cars = ["BMW", "Volvo", "Saab", "Ford"];
+			var i = 0;
+			var text = "";
+			while (cars[i]) {
+				text += cars[i] + "<br>";
+				i++;
+			}
+			document.getElementById("demo_4").innerHTML = text;
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
+<!-- Test Yourself with Exercises! -->
+
+
+<!-- Exercise 1 -->
+<!-- Inside the <script> element; change num1 to 0 and num2 to 10 and 		 run code.  -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+	<p id = "demo_5"></p>
+
+	<script>
+		var i = 0;
+		while (i < 10) {
+			document.getElementById("demo_5").innerHTML += i + "<br>";
+			i++;
+		}
+	</script>
+	</body>
+</html>
+
+
+<!-- Exercise 2 -->
+<!-- Make the loop start counting from 5 instead of 0: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_6"></p>
+
+		<script>
+			var i = 5;
+			while (i < 10) {
+				document.getElementById("demo_6").innerHTML += i + "<br>";
+				i++;
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- Exercise 3 -->
+<!-- Make the loop start counting from 5. Count up to (including) 50 		 and count only every fifth number. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_7"></p>
+
+		<script>
+			var i = 5;
+			while (i <= 50) {
+				document.getElementById("demo_7").innerHTML += i + "<br>";
+				i+= 5;
+			}
+		</script>
+	</body>
+</html>
+
+<!-- Exercise 4 -->
+<!-- Make the loop start counting dowards from 10 and stop at 1
+	 The output should be 10 9 8 7 6 5 4 3 2 1 with line breaks. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_8"></p>
+
+		<script>
+			var i = 10;
+			while (i > 0) {
+				document.getElementById("demo_8").innerHTML += i + "<br>";
+				i--;
+			}
+		</script>
+	</body>
+</html>
+
+<!-- Exercise 5 -->
+<!-- The do/while loop should output 0 1 2 3 4. Try to fix it! -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_9"></p>
+
+		<script>
+			var i = 0;
+			do {
+				document.getElementById("demo_9").innerHTML += i + "<br>";
+				i++;
+			}
+			while(i < 5);
+		</script>
+	</body>
+</html>
