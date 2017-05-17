@@ -1,0 +1,144 @@
+<!-- Using String search() With a Regular Expression -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Search a string for "w3Schools", and display the position of the match:</p>
+
+		<button onclick = "myFunction_1()">Try it</button>
+
+		<p id = "demo_1"></p>
+
+		<script>
+			function myFunction_1() {
+				var str = "Visit W3Schools!";
+				var n = str.search(/w3Schools/i);
+
+				document.getElementById("demo_1").innerHTML = n;
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- Using String search() With String -->
+<!-- The search method will also accept a string as serach argument. The 	  string argument will be converted to a regular expression: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Search a string for "W3Schools" and display the position of the match:</p>
+
+		<button onclick = "myFunction_2()">Try it</button>
+
+		<p id = "demo_2"></p>
+
+		<script>
+			function myFunction_2() {
+				var str = "Visit W3Schools!";
+				var n = str.search("W3Schools");
+
+				document.getElementById("demo_2").innerHTML = n;
+			}
+		</script>
+	</body>
+</html>
+
+<!-- Use String replace() With a Regular Expression -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript String Methods</h2>
+
+		<p>Replace "microsoft" with "W3Schools" in the paragraph below:</p>
+
+		<button onclick = "myFunction_3()">Try it</button>
+
+		<p id = "demo_3">Please visit Microsoft and Microsoft!</p>
+
+		<script>
+			function myFunction_3() {
+				var str = document.getElementById("demo_3").innerHTML;
+				var txt = str.replace(/microsoft/i, "W3Schools");
+
+				document.getElementById("demo_3").innerHTML = txt;
+			}
+		</script>
+	</body>
+</html>
+
+<!-- Using String replace() With a String -->
+<!-- The replace() method will also accept a string as search argument:		  -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript String Method</h2>
+
+		<p>Replace "Microsoft" with "W3Schools" in the paragraph below:</p>
+
+		<button onclick = "myFunction_4()">Try it</button>
+
+		<p id = "demo_4">Please visit Microsoft!</p>
+
+		<script>
+			function myFunction_4() {
+				var str = document.getElementById("demo_4").innerHTML;
+				var txt = str.replace("Microsoft","W3Schools");
+
+				document.getElementById("demo_4").innerHTML = txt;
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- Using test() -->
+<!-- Thet test() method is a RegExp expression method. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Search for an "e" in the next paragraph:</p>
+
+		<p id = "p01">The best thing in life are free!</p>
+
+		<button onclick = "myFunction_5()">Try it</button>
+
+		<p id = "demo_5"></p>
+
+		<script>
+			function myFunction_5() {
+				text = document.getElementById("p01").innerHTML;
+
+				document.getElementById("demo_5").innerHTML = /e/.test(text);
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- Using exec() -->
+<!-- It searches a string for a specified pattern, and returns the 			 found text. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Search for an "e" in the next paragraph:</p>
+		
+		<p id = "p02">The best things in life are free!</p>
+
+		<button onclick = "myFunction_6()">Try it</button>
+
+		<p id = "demo_6"></p>
+
+		<script>
+			function myFunction_6() {
+				text = document.getElementById("p02").innerHTML;
+
+				document.getElementById("demo_6").innerHTML = /e/.exec(text);
+			}
+		</script>
+	</body>
+</html>
