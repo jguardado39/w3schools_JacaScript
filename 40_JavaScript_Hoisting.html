@@ -1,0 +1,86 @@
+<!-- JavaScript Declarations are Hoisted -->
+<!-- In JavaScript, a variable can be declared after it has been used. 		 -->
+<!-- In other words; a variable can be used before it has been declared. 	  -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+	<p id = "demo_1"></p>
+
+	<script>
+		x = 5; // Assign 5 to x
+
+		elem = document.getElementById("demo_1"); // Find an element
+		elem.innerHTML = x; // Display x in the element
+
+		var x; // Declare x
+	</script>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_2"></p>
+
+		<script>
+			var x; // Declare x
+			x = 5; // Assign 5 to x
+
+			elem = document.getElementById("demo_2"); // Find  an element
+			elem.innerHTML = x; // Display x in the element
+		</script>
+	</body>
+</html>
+
+
+<!-- JavaScript Initialization are Not Hoisted -->
+<!-- JavaScript only hoists declarations, not initializations. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_3"></p>
+
+		<script>
+			var x = 5; // Initialize x
+			var y = 7; // Initialize y
+
+			elem = document.getElementById("demo_3"); // Find an element
+			elem.innerHTML = x + " " + y; // Display x and y
+		</script>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_4"></p>
+
+		<script>
+			var x = 5; // Initialize x 
+
+			elem = document.getElementById("demo_4"); // Find an element
+			elem.innerHTML = "x is " + x + " and y is " + y; // Display x and y
+
+			var y = 7; // Initialize y
+		</script>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_5"></p>
+
+		<script>
+			var x = 5; // Initialize x
+			var y; // Declare y
+
+			elem = document.getElementById("demo_5"); // Find an element
+			elem.innerHTML = x + " " + y;
+
+			y = 7; // Assign 7 to y
+		</script>
+	</body>
+</html>
