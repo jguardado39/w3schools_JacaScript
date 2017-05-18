@@ -1,0 +1,37 @@
+<!-- The console.log() Method -->
+<!-- If your broswer supports debugging, you can use console.log() to 		 display JavaScript values in the debuger window: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>My First Web Page</h2>
+
+		<p>Activate debugging in your browser (Chrome, IE, Firefox) with F12,, and select "Console" in the debugger menu.</p>
+
+		<script>
+			a = 5;
+			b = 6;
+			c = a + b;
+			console.log(c);
+		</script>
+	</body>
+</html>
+
+
+<!-- The debugger Keyword -->
+<!-- The debugger keyword stops the execution of JavaScript, and calls (	 if available) the debugging function. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_1"></p>
+
+		<p>With the debugger turned on, the code below should stop executing before it executes the third line.</p>
+
+		<script>
+			var x = 15 * 5;
+			debugger;
+			document.getElementById("demo_1").innerHTML = x;
+		</script>
+	</body>
+</html>
