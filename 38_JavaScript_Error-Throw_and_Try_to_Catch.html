@@ -1,0 +1,212 @@
+<!-- Errors Will Happen! -->
+<!-- JavaScript catches adddlert as an error, and executes the catch 		 code to handle it. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_1"></p>
+
+		<script>
+			try {
+				adddlert("Welcome guest!")
+			}
+			catch(err) {
+				document.getElementById("demo_1").innerHTML = err.message;
+			}
+		</script>
+	</body>
+</html>
+
+<!-- Input Validation Example -->
+<!-- If the value is wrong, an exception (err) is thrown. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Please input a number between 5 and 10:</p>
+
+		<input id="demo_2" type="text">
+		<button type="button" onclick="myFunction_1()">Test Input</button>
+		<p id="message_1"></p>
+
+		<script>
+		function myFunction_1() {
+		    var message, x;
+		    message = document.getElementById("message_1");
+		    message.innerHTML = "";
+		    x = document.getElementById("demo_2").value;
+		    try { 
+		        if(x == "")  throw "empty";
+		        if(isNaN(x)) throw "not a number";
+		        x = Number(x);
+		        if(x < 5)    throw "too low";
+		        if(x > 10)   throw "too high";
+		    }
+		    catch(err) {
+		        message.innerHTML = "Input is " + err;
+		    }
+		}
+		</script>
+	</body>
+</html>
+
+
+<!-- The finally Statement -->
+<!-- The finally statemtn lets you execute code, after try to catch, 		 reguardless of the result:-->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Please input a number between 5 and 10:</p>
+
+		<input id="demo_3" type="text">
+		<button type="button" onclick="myFunction_2()">Test Input</button>
+
+		<p id="message_2"></p>
+
+		<script>
+			function myFunction_2() {
+		    	var message, x;
+		    	message = document.getElementById("message_2");
+		    	message.innerHTML = "";
+		    	x = document.getElementById("demo_3").value;
+		    	try { 
+		        	if(x == "")  throw "is empty";
+		        	if(isNaN(x)) throw "is not a number";
+		        	x = Number(x);
+		        	if(x > 10)   throw "is too high";
+		        	if(x < 5)    throw "is too low";
+		    	}
+		    	catch(err) {
+		        	message.innerHTML = "Input " + err;
+		    	}
+		    	finally {
+		        	document.getElementById("demo_3").value = "";
+		    	}
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- Range Error -->
+<!-- A RangeError is thrown if you use a number that is outside the 		 range of legal values. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript Errors</h2>
+
+		<p>You cannot set the number of significant digits of a number to 500:</p>
+
+		<p id = "demo_4">
+
+		<script>
+			var num = 1;
+			try {
+				num.toPrecision(500); // A number cannot have 500 								  significant digits
+			}
+			catch(err) {
+				document.getElementById("demo_4").innerHTML = err.name;
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- Reference Error -->
+<!-- A ReferenceError is thrown if you use (reference) a variable that 		 has not been declared: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript Errors</h2>
+
+		<p>You cannot use the value of a non-exisiting variable:</p>
+
+		<p id = "demo_5"></p>
+
+		<script>
+			var x;
+			try {
+				x = y + 1; // y cannot be referenced (used)
+			}
+			catch(err) {
+				document.getElementById("demo_5").innerHTML = err.name;
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- Syntax Error -->
+<!-- A Syntax Error is thrown if you try to evaluate code with a syntax 	 error. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript Errors</h2>
+
+		<p>You cannot evaluate code that contains a syntax error:</p>
+
+		<p id = "demo_6"></p>
+
+		<script>
+			try {
+				eval("alert('Hello)"); //Missing ' will produce an error
+			}
+			catch(err) {
+				document.getElementById("demo_6").innerHTML = err.name;
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- Type Error -->
+<!-- A TypeError is thrown if you use a value that is outside the range 	 of expected types: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript Errors</h2>
+
+		<p>You cannot convert a number to upper case:</p>
+
+		<p id = "demo_7"></p>
+
+		<script>
+			var num = 1;
+			try {
+				num.toUpperCase(); // You cannot convert a number to 						  upper case
+			}
+			catch(err) {
+				document.getElementById("demo_7").innerHTML = err.name;
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- URI Error -->
+<!-- A URIError is thrown if you use illegal characters in a URI 			 function: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript Errors</h2>
+
+		<p>Some characters cannot be URI decoded:</p>
+
+		<p id = "demo_8"></p>
+
+		<script>
+			try {
+				decodeURI("%%%");
+			}
+			catch(err) {
+				document.getElementById("demo_8").innerHTML = err.name;
+			}
+		</script>
+	</body>
+</html>
