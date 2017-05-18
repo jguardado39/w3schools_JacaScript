@@ -1,0 +1,322 @@
+<!-- Declaring Strict Mode -->
+<!-- Declared at the beginning of a script, it has global scope (all code in the script will 		 execute in strict mode): -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>With "use strict":</h2>
+		<h3>Using a variable without declaring it, is not allowed.</h3>
+
+		<p>Activat debugging in your broswer (F12) to see the error report.</p>
+
+		<script>
+			"use strict";
+			x = 3.14 // This will cause an error (x is not defined).
+		</script>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>Global "use strict" declaration.</h2>
+
+		<p>Activate debugging in your browser (F12) to see the error report.</p>
+
+		<script>
+			"use strict";
+			myFunction();
+
+			function myFunction() {
+				y = 3.14; // This will cause an error (y is not defined)
+			}
+		</script>
+	</body>
+</html>
+
+<!-- Declared inside a function, it has local scope (only the code inside the function is in 		 strict mode): -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>"use strict" in a function will only cause errors in that function.</p>
+
+		<p>Activate debugging in your browser (F12) to see the error report.</p>
+
+		<script>
+			x = 3.14; // This will cause an error (y is not defined).
+			myFunction_1();
+
+			function myFunction_1() {
+				"use strict"
+				y = 3.14; // This will cause an error (y is not defined).
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- Not Allowed in Strict Mode -->
+<!-- Using a variable, without declaring it, is not allowed: -->
+<!-- Objects are variables too -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>With "use strict":</h2>
+		<h3>Using a variable without declaring it, is not allowed.</h3>
+
+		<p>Activated debugging in your brower (F12) to see the error report.</p>
+
+		<script>
+			"use strict"
+			x = 3.14; // This will cause an error (x is not defined).
+		</script>
+	</body>
+</html>
+
+<!-- Using an object, without declaring it, is not allowed: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>With "use stritct":</h2>
+		<h3>Using an object without declaring it, is not allowed.</h3>
+
+		<p>Activated debugging in your browser (F12) to see the error report.</p>
+
+		<script>
+			"use strict";
+			x = {p1: 10, p2: 20}; // This will cause an error (x is not defined).
+		</script>
+	</body>
+</html>
+
+<!-- Deleting a variable (or object) is not allowed. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>With "use strict":</h2>
+		<h3>Deleting a variable (or object) is not allowed.</h3>
+
+		<p>Activate debugging in your browser(F12) to see the error report.</p>
+
+		<script>
+			"use strict";
+			var x = 3.14;
+			delete x; //This will cause an error
+		</script>
+	</body>
+</html>
+
+<!-- Deleting a function is not allowed. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>With "use strict":</h2>
+		<h3>Deleting a function is not allowed.</h3>
+
+		<p>Activate debugging in your browser (F12) to see the error report.</p>
+
+		<script>
+			"use strict";
+			function x(p1, p2) {};
+			delete x; // This will cause an error
+		</script>
+	</body>
+</html>
+
+<!-- Duplicating a parameter name is not allowed: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>With "use strict":</h2>
+		<h3>Duplicating a parameter name is not allowed.</h3>
+
+		<p>Activate debugging in your browser (F12) to see the error report.</p>
+
+		<script>
+			"use strict";
+			function x (p1, p1) {}; // THis will cause an error
+		</script>
+	</body>
+</html>
+
+<!-- Octal numeric literals are not allowed: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>With "use strict":</h2>
+		<h3>Duplicating a parameter name is not allowed.</h3>
+
+		<p>Activate debugging in your browser (F12) to see the error report.</p>
+
+		<script>
+			"use strict";
+			function x(p1, p1) {}; // This will cause an error
+		</script>
+	</body>
+</html>
+
+<!-- Escape character are not allowed: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>With "use strict":</h2>
+		<h3>Escape characters are not allowed.</h3>
+
+		<p>Activate debugging in your browser (F12) to see the error report.</p>
+
+		<script>
+			"use strict";
+			var x \010; // This will cause an error
+		</script>
+	</body>
+</html>
+
+<!-- Writing to a read-only property is not allowed: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>With "use strict":</h2>
+		<h3>Writing to a read-only property is not allowed.</h3>
+
+		<p>Activatte debugging in your browser (F12) to see the error report.</p>
+
+		<script>
+			var obj = {};
+			Object.defineProperty(obj, "x", {value: 0, writable: false});
+
+			obj.x = 3.14; // This will cause an error
+		</script>
+	</body>
+</html>
+
+<!-- Writing to a get-only property is not allowed: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+	<h2>Write "use strict":</h2>
+	<h3>Writign to a get-only property is not allowed.</h3>
+
+	<p>Activate debugging in your browser (F12) to see the error report.</p>
+
+	<script>
+		"use strict";
+		var obj = {get x() {return 0}};
+
+		obj.x = 3.14; // This will ause an error
+	</script>
+	</body>
+</html>
+
+<!-- Deleting an undeletable property is not allowed: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>With "use strict":</h2>
+		<h3>Deleting an undeletable property is not allowed.</h3>
+
+		<p>Activate debugging in your browswer (F12) to see the error report.</p>
+
+		<script>
+			"use strict";
+			delete Object.prototype; // This will cause an error
+		</script>
+	</body>
+</html>
+
+<!-- The string "eval" cannot be used as a variable: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>With "use strict":</h2>
+		<h3>The string "eval" cannot be used as a variable.</h3>
+
+		<p>Activate debugging in your browser (F12) to see the error report.</p>
+
+		<script>
+			"use strict";
+			var eval = 3.14; // This will cause an error
+		</script>
+	</body>
+</html>
+
+<!-- The string "arguments " cannot be used as a variable -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>With "use strict":</h2>
+		<h3>The string "arguments" cannot be used as a variable.</h3>
+
+		<p>Activate debugging in your brower (F12) to see the error report.</p>
+
+		<script>
+			"use strict";
+			var arguments = 3.14; // This will cause an error
+		</script>
+	</body>
+</html>
+
+<!-- The with statement is not allowed: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>With "use strict":</h2>
+		<h3>The with statement is not allowed.</h3>
+
+		<p>Activate debugging in your browswer (F12) to see the error report </p>
+
+		<script>
+			"use strict";
+			with (Math){x = cos(2)}; // This will cause an error
+		</script>
+	</body>
+</html>
+
+<!-- For sercurity reasons, eval() is not allowed to create variables in the scope from which it 	  was called: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>With "use strict":</h2>
+		<h3>For secruity reasons, eval() is not allowed to create variables in the scope from with it was called.</h3>
+
+		<p>Activated debugging in your browser (F12) to see the error report.</p>
+
+		<script>
+			"use strict";
+			eval ("var x = 2");
+			alert(x); // This will cause an error
+		</script>
+	</body>
+</html>
+
+
+<!-- Future Proof! -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>With "use strict":</h2>
+		<h3>Future reserved keywords are not allowed in strict mode.</h3>
+
+		<p>Avtivate debugging in your browser (F12) to see the error report.</p>
+
+		<script>
+			"use strict";
+			var public = 1500; // This will cause an error
+		</script>
+	</body>
+</html>
