@@ -1,0 +1,373 @@
+<!-- Accidently Using the Assignment Operator -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+	<p id = "demo_1"></p>
+
+	<script>
+		var x = 0;
+		document.getElementById("demo_1").innerHTML = Boolean(x == 10);
+	</script>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_2"></p>
+
+		<script>
+			var x = 0;
+			document.getElementById("demo_2").innerHTML = Boolean(x = 10);
+		</script>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_3"></p>
+
+		<script>
+			var x = 0;
+			document.getElementById("demo_3").innerHTML = Boolean(x = 0);
+		</script>
+	</body>
+</html>
+
+
+<!-- Expecting Loose Comparison -->
+<!-- In regurlar comparison, data type does not matter. This if statment returns true: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_4"></p>
+
+		<script>
+			var x = 10;
+			var y = "10";
+			document.getElementById("demo_4").innerHTML = Boolean(x == y);
+		</script>
+	</body>
+</html>
+
+<!-- In strict comparison, data type does matter. This if statemetn returns false: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_5"></p>
+
+		<script>
+			var x = 10;
+			var y = "10";
+			document.getElementById("demo_5").innerHTML = Boolean(x == y);
+		</script>
+	</body>
+</html>
+
+<!-- It is common mistake to forget that switch statemtns use strict comparison: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_6"></p>
+
+		<script>
+			var x = 10;
+			switch(x) {
+				case 10: alert("Hello");
+			}
+		</script>
+	</body>
+</html>
+
+<!-- This case switch will not display an alert: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_7"></p>
+
+		<script>
+			var x = 10;
+			switch(x) {
+				case "10": alert("Hello");
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- Confusing Addition & Concatenation -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_8"></p>
+
+		<script>
+			var x = 10 + "5";
+			document.getElementById("demo_8").innerHTML = x;
+		</script>
+	</body>
+</html>
+
+<!-- When adding two variables, it can be difficutl to anticipate the result: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_9"></p>
+
+		<script>
+			var x = 10;
+			var y = "5";
+			var z = x + y;
+			document.getElementById("demo_9").innerHTML = z;
+		</script>
+	</body>
+</html>
+
+
+<!-- Misunderstanding Floats -->
+<!-- All numbers in JavaScript are stored as 64-bits Floating point numbers (Floats). -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_10"></p>
+
+		<script>
+			var x = 0.1;
+			var y = 0.2;
+			var z = x + y;
+			document.getElementById("demo_10").innerHTML = z;
+		</script>
+	</body>
+</html>
+
+<!-- To solve the problem above, it helps to multiply and divide: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_11"></p>
+
+		<script>
+			var x = 0.1;
+			var y = 0.2;
+			var z = (x * 10 + y * 10) / 10;
+			document.getElementById("demo_11").innerHTML = z;
+		</script>
+	</body>
+</html>
+
+
+<!-- Breaking a JavaScript String -->
+<!-- JavaScript will allow you to break a statement into two lines: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_12"></p>
+
+		<script>
+			document.getElementById("demo_12").innerHTML = "Hello World!";
+		</script>
+	</body>
+</html>
+
+<!-- But breaking a statement in the middle of a string will not work: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_13"></p>
+
+		<script>
+			document.getElementById("demo_13").innerHTML = "Hello
+			World!";
+		</script>
+	</body>
+</html>
+
+<!-- You must use a "backslash" if you must break a statement in a string: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_14"></p>
+
+		<script>
+			document.getElementById("demo_14").innerHTML = "Hello \
+			World!";
+		</script>
+	</body>
+</html>
+
+
+<!-- Misplacing Semicolon -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_15"></p>
+
+		<script>
+			var x = 5;
+			if (x === 19); {
+				document.getElementById("demo_15").innerHTML = "Hello";
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- Breaking a Return Statement -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_16"></p>
+
+		<script>
+			document.getElementById("demo_16").innerHTML = myFunction_1(55);
+			function myFunction_1(a) {
+				var power = 10
+				return a * power
+			}
+		</script>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_17"></p>
+
+		<script>
+			document.getElementById("demo_17").innerHTML = myFunction_2(55);
+			function myFunction_2(a) {
+				var power = 10;
+				return a * power;
+			}
+		</script>
+	</body>
+</html>
+
+<!-- JavaScript will also allow you to break a statement into two lines. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_18"></p>
+
+		<script>
+			document.getElementById("demo_18").innerHTML = myFunction_3(55);
+			function myFunction_3(a) {
+				var
+				power = 10;
+				return a * power;
+			}
+		</script>
+	</body>
+</html>
+
+<!-- What will happen if you break the return statement in two lines like this: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_19"></p>
+
+		<script>
+			document.getElementById("demo_19").innerHTML = myFunction_4(55);
+			function myFunction_4(a) {
+				var
+				power = 10;
+				return
+				a * power;
+			}
+		</script>
+	</body>
+</html>
+
+<!-- JavaScript thinks you mean -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_20"></p>
+
+		<script>
+			document.getElementById("demo_20").innerHTML = myFunction_5(55);
+			function myFunction_5(a) {
+				var
+				power = 10;
+				return;
+				a * power;
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- Accessing Arrays with Named Indexes -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript Arrays</h2>
+
+		<p id = "demo_21"></p>
+
+		<script>
+			var person = [];
+			person [0] = "John";
+			person[1] = "Doe";
+			person[2] = 46;
+			document.getElementById("demo_21").innerHTML =
+			person[0] + " " + person.length;
+		</script>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript Arrays</h2>
+
+		<p>If you use a namaed index, when accessing an array, JavaScript will redefined the array to a standard object, and some array methods and properties will produce undefined or incorrect results.</p>
+
+		<p id = "demo_22"></p>
+
+		<script>
+			var person = [];
+			person["firstName"] = "John";
+			person["lastName"] = "Doe";
+			person["age"] = 46;
+			document.getElementById("demo_22").innerHTML =
+			person[0] + " " + person.length;
+		</script>
+	</body>
+</html>
+
+
+<!-- Expeecting Block Level Scope -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_23"></p>
+
+		<script>
+			for (var i = 0; i < 10; i++) {
+				// some code
+			}
+			document.getElementById("demo_23").innerHTML = i;
+		</script>
+	</body>
+</html>
