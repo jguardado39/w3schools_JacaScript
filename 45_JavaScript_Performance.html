@@ -1,0 +1,15 @@
+<!-- Reduce DOM Access -->
+<!-- Accessing the HTML DOM is very slow, compared to other JavaScript statements. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_1"></p>
+
+		<script>
+			var obj;
+			obj = document.getElementById("demo_1");
+			obj.innerHTML = " Hello";
+		</script>
+	</body>
+</html>
