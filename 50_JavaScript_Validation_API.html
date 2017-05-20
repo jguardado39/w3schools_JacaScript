@@ -1,0 +1,88 @@
+<!-- Constraint Validation DOM Methods -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Enter a number and click OK:</p>
+
+		<input id = "id_1" type = "number" min = "100" max = "300" required>
+		<button onclick = "myFunction_1()">OK</button>
+
+		<p>If the number is less than 100 or greater than 300, an error message will be displayed.</p>
+
+		<p id = "demo_1"></p>
+
+		<script>
+			function myFunction_1() {
+				var inpObj = document.getElementById("id_1");
+				if (inpObj.checkValidity() == false) {
+
+					document.getElementById("demo_1").innerHTML = inpObj.ValidationMessage;
+				} else {
+
+					document.getElementById("demo_1").innerHTML = "Input OK";
+				}
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- Examples -->
+<!-- If the number in an input field is greater than 100 (the input's max attribute), display a message -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Enter a number and click OK:</p>
+
+		<input id = "id_2" type = "number" max = "100">
+		<button onclick = "myFunction_2()">OK</button>
+
+		<p>If the number is greater than 100 (the input's max attribute), an error message will be displayed.</p>
+
+		<p id = "demo_2"></p>
+
+		<script>
+			function myFunction_2() {
+				var txt = "";
+				if (document.getElementById("id_2").validity.rangeOverflow) {
+					txt = "Value too large";
+				} else {
+					txt = "Input OK";
+				}
+
+			document.getElementById("demo_2").innerHTML = txt;
+			}
+		</script>
+	</body>
+</html>
+
+<!-- If the number in an input field is less than 100 (the input's min attribute), display a message: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Enter a number and click OK:</p>
+
+		<input id = "id_3" type = "number" min = "100">
+		<button onclick = "myFunction_3()">OK</button>
+
+		<p>If the number is less than 100 (the input's min attribute), an error message will be displayed.</p>
+
+		<p id = "demo_3"></p>
+
+		<script>
+			function myFunction_3() {
+				var txt = "";
+				if (document.getElementById("id_3").validity.rangeUnderflow) {
+					txt = "Value too small";
+				} else {
+					txt = "Input OK";
+				}
+
+			document.getElementById("demo_3").innerHTML = txt;
+			}
+		</script>
+	</body>
+</html>
