@@ -1,0 +1,229 @@
+<!-- JavaScript Primitives -->
+<!-- Primitive values are immutable (they are hardcoded and therefore cannot be changed). -->
+
+
+<!-- Objects are Variables Containing Variables -->
+<!-- JavaScript variables can contain single values: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Creating a JavaScript Variable.</p>
+
+		<p id = "demo_1"></p>
+
+		<script>
+			var person = "John Doe";
+			document.getElementById("demo_1").innerHTML = person;
+		</script>
+	</body>
+</html>
+
+<!-- Objects are variables too. But objects can contain many values. -->
+<!-- The values are written as name : value pairs (name) and value separated by a colon). -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Creating a JavaScript Object.</p>
+
+		<p id = "demo_2"></p>
+
+		<script>
+			var person = {
+				firstName : "John",
+				lastName  : "Doe",
+				age       : 50,
+				eyeColor  : "blue"
+			};
+
+			document.getElementById("demo_2").innerHTML = person.firstName + " " + person.lastName;
+		</script>
+	</body>
+</html>
+
+
+<!-- Using an Object Literal -->
+<!-- This is the eastiest way to create a JavaScript Object. -->
+<!-- Using an object literal, you both define and create an object in one statement -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Creating a JavaScript Object.</p>
+
+		<p id = "demo_3"></p>
+
+		<script>
+			var person = {firstName: "John", lastName: "Doe", age: 50, eyeColor:"blue"};
+
+			document.getElementById("demo_3").innerHTML = person.firstName + " is " + person.age + " year old.";
+		</script>
+	</body>
+</html>
+
+<!-- Spaces and line breaks are not important. An object definition can span multiople lines: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Creating a JavaScript Object.</p>
+
+		<p id = "demo_4"></p>
+
+		<script>
+			var person = {
+				firstName : "John",
+				lastName  : "Doe",
+				age       : 50,
+				eyeColor  : "blue"
+			}
+
+			document.getElementById("demo_4").innerHTML = person.firstName + " is " + person.age + " years old.";
+		</script>
+	</body>
+</html>
+
+
+<!-- Using the JavaScript Keyword new -->
+<!-- The following example also creates a new JavaScript object with four properties: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_5"></p>
+
+		<script>
+			var person = new Object();
+			person.firstName = "John";
+			person.lastName = "Doe";
+			person.age = 50;
+			person.eyeColor = "blue";
+
+			document.getElementById("demo_5").innerHTML = person.firstName + " is " + person.age + " years old."; 
+		</script>
+	</body>
+</html>
+
+<!-- The two examples above do exactly the same. There is not need to use new Object(). For simplciity, readability and execution speed, use the first one (the object literal method). -->
+
+
+<!-- Using an Object Constructor -->
+<!-- The example above are limited in many situations. They only create a single object. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_6"></p>
+
+		<script>
+			function person(first, last, age, eye) {
+				this.firstName = first;
+				this.lastName = last;
+				this.age = age;
+				this.eyeColor = eye;
+			}
+
+			var myFather = new person("John", "Doe", 50, "blue");
+			var myMother = new person("Sally", "Rally", 48, "green");
+
+			document.getElementById("demo_6").innerHTML = "My father is " + myFather.age + ". My mother is " + myMother.age;
+		</script>
+	</body>
+</html>
+
+
+<!-- Built-in JavaScript Constructors -->
+<!-- JavaScript has built-in constructors for native objects: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_7"></p>
+
+		<script>
+			var x1 = new Object();   // A new Object object
+			var x2 = new String();   // A new String object
+			var x3 = new Number();   // A new Number object
+			var x4 = new Boolean();  // A new Boolean object
+			var x5 = new Array();    // A new Array object
+			var x6 = new RegExp();   // A new RegExp object
+			var x7 = new Function(); // A new Function object
+			var x8 = new Date();     // A new Date object
+
+			document.getElementById("demo_7").innerHTML = 
+			"x1: " + typeof x1 + "<br>" +
+			"x2: " + typeof x2 + "<br>" +
+			"x3: " + typeof x3 + "<br>" +
+			"x4: " + typeof x4 + "<br>" +
+			"x5: " + typeof x5 + "<br>" +
+			"x6: " + typeof x6 + "<br>" +
+			"x7: " + typeof x7 + "<br>" +
+			"x8: " + typeof x8 + "<br>";
+		</script>
+
+		<p>There is no need to use String(), Number(), Boolean(), Array(), and RegExp()</p>
+		<p>Read the JavaScript tutorials.</p>
+	</body>
+</html>
+
+<!-- The Math() object is not in the list is a global object. The new keyword cannot be used on Math. -->
+
+
+<!-- Did You Know? -->
+
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_8"></p>
+
+		<script>
+			var x1 = {};
+			var x2 = "";
+			var x3 = 0;
+			var x4 = false;
+			var x5 = [];
+			var x6 = /()/;
+			var x7 = function(){};
+
+			document.getElementById("demo_8").innerHTML = 
+			"x1: " + typeof x1 + "<br>" +
+			"x2: " + typeof x2 + "<br>" +
+			"x3: " + typeof x3 + "<br>" +
+			"x4: " + typeof x4 + "<br>" +
+			"x5: " + typeof x5 + "<br>" +
+			"x6: " + typeof x6 + "<br>" +
+			"x7: " + typeof x7 + "<br>";
+		</script>
+	</body>
+</html>
+
+
+<!-- JavaScript Objects are Mutuable -->
+<!-- Objects are mutuable: They are addressed by reference, not by value -->
+<!-- The object x is not a copy of person. It is person. Both x and person are the same object. -->
+<!-- Any changes to x will also change person, because x and person are the same object. -->
+
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>JavaScript objects are mutable.</p>
+		<p>Any changes to a copy of an object will also change the original.</p>
+
+		<p id = "deom_9"></p>
+
+		<script>
+			var person = {firstName: "John", lastName: "Doe", age: 50, eyeColor: "blue"}
+
+			var x = person;
+			x.age = 10;
+
+			document.getElementById("deom_9").innerHTML = 
+			person.firstName + " is " + person.age + " years old.";
+		</script>
+	</body>
+</html>
+
+<!-- JavaScript variables are not mutuable. Only JavaScript objects. -->
