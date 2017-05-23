@@ -1,0 +1,118 @@
+<!-- Accessing JavaScript Properties -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>There are two different ways to access an object property:</p>
+		<p>You can use .property or ["property"]</p>
+
+		<p id = "demo_1"></p>
+
+		<script>
+			var person = {
+				firstname: "John",
+				lastname: "Doe",
+				age: 50,
+				eyecolor: "blue"
+			};
+			document.getElementById("demo_1").innerHTML = 
+			person.firstname + " is " + person.age + " years old.";
+		</script>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>There are two different ways to access an object property:</p>
+
+		<p>You can use .property or ["property"].</p>
+
+		<p id = "demo_2"></p>
+
+		<script>
+			var person = {
+				firstname: "John",
+				lastname: "Doe",
+				age: 50,
+				eyecolor: "blue"
+			};
+			document.getElementById("demo_2").innerHTML = person["firstname"] + " is " + person["age"] + " years old.";
+		</script>
+	</body>
+</html>
+
+
+<!-- JavaScript for...in Loop -->
+<!-- The JavaScript for...in statement loops through the properties of an object. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_3"></p>
+
+		<script>
+			var txt = "";
+			var person = {fname: "John", lname: "Doe", age: 25};
+			var x;
+			for (x in person) {
+				txt += person[x] + " ";
+			}
+			document.getElementById("demo_3").innerHTML = txt;
+		</script>
+	</body>
+</html>
+
+
+<!-- Adding New Properties -->
+<!-- You can add new properties to an existing object by simply giving it a value. -->
+<!-- Assume that the person object already exists - you can then give it new properties: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>You can add new properties to existing objects.</p>
+
+		<p id = "demo_4"></p>
+
+		<script>
+			var person = {
+				firstname: "John",
+				lastname : "Doe",
+				age: 50,
+				eyecolor: "blue"
+			};
+			person.nationality = "English";
+			document.getElementById("demo_4").innerHTML =
+			person.firstname + " is " + person.nationality + ".";
+		</script>
+	</body>
+</html>
+
+<!-- You cannot use reserved words for property (or method) names. JavaScript naming rules apply. -->
+
+
+<!-- Deleting Properties -->
+<!-- The delete keyword deltes a property from an object: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>You can delete object properties.</p>
+
+		<p id = "demo_5"></p>
+
+		<script>
+			var person = {
+				firstname: "John",
+				lastname: "Doe",
+				age: 50,
+				eyecolor: "blue"
+			};
+			delete person.age
+			document.getElementById("demo_5").innerHTML = person.firstname + " is " + person.age + " years old.";
+		</script>
+	</body>
+</html>
+
+<!-- The delete keyword deletes both the value of property and the property itsself. -->
