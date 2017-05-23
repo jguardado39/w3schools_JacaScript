@@ -1,0 +1,78 @@
+<!-- Accessing Object Methods -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Creating and using an object method</p>
+
+		<p>A method is actual a function definition stored as a property value.</p>
+
+		<p id = "demo_1"></p>
+
+		<script>
+			var person = {
+				firstName: "John",
+				lastName : "Doe",
+				id       : 5566,
+				fullName_1 : function_1() {
+					return this.firstName + " " + this.lastName;
+				}
+			};
+
+			document.getElementById("demo_1").innerHTML = person.fullName_1()
+		</script>
+	</body>
+</html>
+
+<!-- If you access the fullName property, without(), it will return the function definition: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>An object method is a function definition stored as a property value.</p>
+		<p>If you access it without (), it will return the function definition:</p>
+
+		<p id = "demo_2"></p>
+
+		<script>
+			var person = {
+				firstName: "John",
+				lastName : "Doe",
+				id       : 5566,
+				fullName_2 : function_2() {
+					return this.firstName + " " + this.lastName;
+				}
+			};
+			document.getElementById("demo_2").innerHTML = person.fullName_2;
+		</script>
+	</body>
+</html>
+
+
+<!-- Adding New Methods -->
+<!-- Adding methods to an object is done inside the constructor function: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_3"></p>
+
+		<script>
+			function person(firstName, lastName, age, eyeColor) {
+				this.firstName = firstName;
+				this.lastName = lastName;
+				this.age = age;
+				this.eyeColor = eyeColor;
+				this.changeName = function_3 (name) {
+					this.lastName = name;
+				}
+			}
+			var myMother = new person("Sally", "Rally", 48, "green");
+			myMother.changeName("Doe");
+			document.getElementById("demo_3").innerHTML = 
+			"My mother's last name is " + myMother.lastName;
+		</script>
+	</body>
+</html>
+
+<!-- JavaScript knows which person you are talking about by "subsituting" this with myMother. -->
