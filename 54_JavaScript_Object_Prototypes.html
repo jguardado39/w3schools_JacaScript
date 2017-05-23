@@ -1,0 +1,223 @@
+<!-- JavaScript Object Prtotypes -->
+<!-- Every JavaScript object has a prototype. The prototype is also an object. -->
+<!-- All JavaScript objects inherit their properties and methods from their prototype -->
+
+<!-- With a constructor function, you can use the new keyword to create new objects from the same prototype: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_1"></p>
+
+		<script>
+			function Person(first, last, age, eye) {
+				this.firstName = first;
+				this.lastName = last;
+				this.age = age;
+				this.eyeColor = eye;
+			}
+
+			var myFather = new Person("John", "Doe", 50, "blue");
+			var myMother = new Person("Sally", "Rally", 48, "green");
+
+			document.getElementById("demo_1").innerHTML =
+			"My father is " + myFather.age + ". My mother is " + myMother.age
+		</script>
+	</body>
+</html>
+
+
+<!-- Adding a Property to an Object -->
+<!-- Adding a new property to an existing object is easy: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_2"></p>
+
+		<script>
+			function Person(first, last, age, eye) {
+				this.firstName = first;
+				this.lastName = last;
+				this.age = age;
+				this.eyeColor = eye;
+			}
+
+			var myFather = new Person("John", "Doe", 50, "blue");
+			var myMother = new Person("Sally", "Rally", 48, "green");
+
+			myFather.nationality = "English";
+
+			document.getElementById("demo_2").innerHTML = 
+			"My father is " + myFather.nationality;
+		</script>
+	</body>
+</html>
+
+<!-- The property will be added to myFather. Not to myMother. Not to any other person objects. -->
+
+
+<!-- Adding a Method to an Object -->
+<!-- Adding a new method to an exxisting object is also easy: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_3"></p>
+
+		<script>
+			function Person(first, last, age, eye) {
+				this.firstName = first;
+				this.lastName = last;
+				this.age = age;
+				this.eyeColor = eye;
+			}
+			var myFather = new Person("John", "Doe", 50, "blue");
+			var myMother = new Person("Sally", "Rally", 48, "green");
+
+			myFather.name = function() {
+				return this.firstName + " " + this.lastName;
+			};
+
+			document.getElementById("demo_3").innerHTML =
+			"My father is " + myFather.name();
+		</script>
+	</body>
+</html>
+
+<!-- The method will be added to myFather. Not to myMother. -->
+
+
+<!-- Adding Properties to a Prototype -->
+<!-- You cannot add a new property to a prototype the same way as you add a new property to an existing object, because the prototype is not an exisitng object. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_4"></p>
+
+		<p>The value of myFather.nationality is "undefined", because you cannot add a new property to a prototype the same way as you can add a new property to an exisitng object.</p>
+
+		<script>
+			function Person(first, last, age, eye) {
+				this.firstName = first;
+				this.lastName = last;
+				this.age = age;
+				this.eyeColor = eye;
+			}
+			Person.nationality = "English";
+
+			var myFather = new Person("John", "Doe", 50, "blue");
+			var myMother = new Person("Sally", "Rally", 48, "green");
+
+			document.getElementById("demo_4").innerHTML = 
+			"The nationality of my father is " + myFather.nationality;
+		</script>
+	</body>
+</html>
+
+<!-- To add a new property to a prototype, you must add it to the constructor function: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_5"></p>
+
+		<script>
+			function Person(first, last, age, eye) {
+				this.firstName = first;
+				this.lastName = last;
+				this.age = age;
+				this.eyeColor = eye;
+				this.nationality = "English";
+			}
+
+			var myFather = new Person ("John", "Doe", 50, "blue");
+			var myMother = new Person("Sally", "Rally", 48, "green");
+
+			document.getElementById("demo_5").innerHTML =
+			"My father is " + myFather.nationality + ". My mother is " + myMother.nationality + ".";
+		</script>
+	</body>
+</html>
+
+<!-- Prototype properties can have prototype value (defalut values). -->
+
+
+<!-- Adding Methods to a Prototype -->
+<!-- Your constructor function can also define methods: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_6"></p>
+
+		<script>
+			function Person(first, last, age, eye) {
+				this.firstName = first;
+				this.lastName = last;
+				this.age = age;
+				this.eyeColor = eye;
+				this.name = function() {
+					return this.firstName + " " + this.lastName
+				};
+			}
+
+			var myFather = new Person("John", "Doe", 50, "blue");
+			document.getElementById("demo_6").innerHTML =
+			"My father is " + myFather.name();
+		</script>
+	</body>
+</html>
+
+
+<!-- Using the prototype Property -->
+<!-- The JavaScript prototype property allows you to add new properties to an existing prototype -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_7"></p>
+
+		<script>
+			function Person(first, last, age, eye) {
+				this.firstName = first;
+				this.lastName = last;
+				this.age = age;
+				this.eyeColor = eye;
+			}
+			Person.prototype.nationality = "English";
+
+			var myFather = new Person("John", "Doe", 50, "blue");
+			document.getElementById("demo_7").innerHTML =
+			"My father is " + myFather.nationality;
+		</script>
+	</body>
+</html>
+
+<!-- The JavaScript prototype property also allows you to add new methods to an exisitng protptye: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_8"></p>
+
+		<script>
+			function Person(first, last, age, eye) {
+				this.firstName = first;
+				this.lastName = last;
+				this.age = age;
+				this.eyeColor = eye;
+			}
+			Person.prototype.name = function() {
+				return this.firstName + " " + this.lastName
+			};
+
+			var myFather = new Person("John", "Doe", 50, "blue");
+			document.getElementById("demo_8").innerHTML =
+			"My father is " + myFather.name();
+		</script>
+	</body>
+</html>
+
+<!-- Only modify your own prototype. Never modify the prototype of standard JavaScript objects. -->
