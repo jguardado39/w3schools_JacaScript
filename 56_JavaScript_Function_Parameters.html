@@ -1,0 +1,72 @@
+<!-- A JavaScript function does not perform any checking on parameter values (arguments). -->
+
+
+<!-- Parameter Defaults -->
+<!-- If a function is called with missign, arguments (less than declared), the missing values are set to: undefined -->
+<!-- Sometimes this is acceptable, but sometimes it is better to assign a default value to the parameter: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Setting a default value to a function parameter.</p>
+		<p id = "demo_1"></p>
+
+		<script>
+			function myFunction_1(x, y) {
+				if (y === undefined) {
+					y = 0;
+				}
+				return x * y;
+			}
+			document.getElementById("demo_1").innerHTML = myFunction_1(4);
+		</script>
+	</body>
+</html>
+
+
+<!-- The Argument Object -->
+<!-- JavaScript functions have a built in object called arguments object. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Finding the largerst number.</p>
+		<p id = "demo_2"></p>
+
+		<script>
+			function findMax() {
+				var i;
+				var max = -Infinity;
+				for(i = 0; i < arguments.length; i++) {
+					if (arguments[i] > max) {
+						max = arguments[i];
+					}
+				}
+				return max;
+			}
+			document.getElementById("demo_2").innerHTML = findMax(4, 6, 5)
+		</script>
+	</body>
+</html>
+
+<!-- Or create a function to sum all input values: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Sum of all arguments:</p>
+		<p id = "demo_3"></p>
+
+		<script>
+			function sumAll() {
+				var i, sum = 0;
+				for(i = 0; i < arguments.length; i++) {
+					sum += arguments[i];
+				}
+				return sum;
+			}
+			document.getElementById("demo_3").innerHTML = 
+			sumAll(1, 123, 500, 115, 44, 88);
+		</script>
+	</body>
+</html>
