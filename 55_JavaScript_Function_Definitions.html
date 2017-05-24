@@ -1,0 +1,201 @@
+<!-- Javascript functions are defined with the function keyword. -->
+<!-- You can use a function declaration or a function expression. -->
+
+
+<!-- Function Declarations -->
+<!-- Declared function are not executed immediately. They are "saved for later use", and will be executed later, when they are invoked (called upon) -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>JavaScript Function</h2>
+
+		<p>This example calls a function which preforms a calculation and returns the result:</p>
+
+		<p id = "demo_1"></p>
+
+		<script>
+			function myFunction_1(a, b) {
+				return a * b
+			}
+			document.getElementById("demo_1").innerHTML = myFunction_1(4, 3);
+		</script>
+	</body>
+</html>
+
+<!-- Semicolons are used to separate executable JavaScript statements. Since a function declaration is not an executable statement, it is not common to end it with a semicolon. -->
+
+
+<!-- Function Expressions -->
+<!-- A JavaScript function can also be defined using an expression -->
+<!-- A function expression can be stored in a variable -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>A function can be stored in a vavriable:</p>
+		<p id = "demo_2"></p>
+
+		<script>
+			var x = function(a, b) {
+				return a * b;
+			};
+			document.getElementById("demo_2").innerHTML = x;
+		</script>
+	</body>
+</html>
+
+<!-- After a function expression has been stored in a variable, the variabl can be used as a function -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>After a function has been stored in a variable, the variable can be used as a function:</p>
+
+		<p id = "demo_3"></p>
+
+		<script>
+			var x = function(a, b) {
+				return a * b
+			};
+			document.getElementById("demo_3").innerHTML = x(4, 3);
+		</script>
+	</body>
+</html>
+
+
+<!-- The Function() Constructor -->
+<!-- Functions can also be defined with a built-in JavaScript constructor called Function(). -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>JavaScript has a built-in function constructor.</p>
+		<p id = "demo_4"></p>
+
+		<script>
+			var myFunction_2 = new Function("a", "b", "return a * b");
+			document.getElementById("demo_4").innerHTML = myFunction_2(4, 3);
+		</script>
+	</body>
+</html>
+
+<!-- You actually don't have to use the function constructor. The example above is the same as writing: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_5"></p>
+
+		<script>
+			var myFunction_3 = function (a, b) {
+				return a * b
+			}
+			document.getElementById("demo_5").innerHTML = myFunction_3(4, 3);
+		</script>
+	</body>
+</html>
+
+<!-- Most of the time, you can avoid using the new keyword in JavaScript. -->
+
+
+<!-- Function Hoisting -->
+<!-- Hoisiting is JavaScript's defult behavior of moving declarations to the top of the current scope. -->
+
+
+<!-- Self-Invoking Functions -->
+<!-- A self-invoking expression is invoked (started) automatically, without being called. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Functions can be invoked automatically without being called:</p>
+
+		<p id = "demo_6"></p>
+
+		<script>
+			(function () {
+				document.getElementById("demo_6").innerHTML = "Hello! I called myself";
+			})();
+		</script>
+	</body>
+</html>
+
+<!-- The function above is actually an anomymous self-invoking function (function without name). -->
+
+
+<!-- Functions Can Be Used as Values -->
+<!-- JavaScript can be used as values: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Functions can be treated as values:</p>
+		<p>x = myFunction(4, 3) or x = 12</p>
+		<p>In both cases, x becomes a number with the value of 12.</p>
+		<p id = "demo_7"></p>
+
+		<script>
+			function myFunction_4(a, b) {
+				return a * b;
+			}
+			var x = myFunction_4(4, 3);
+			document.getElementById("demo_7").innerHTML = x;
+		</script>	
+	</body>
+</html>
+
+<!-- JavaScript functions can be used in expressions: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Functions can be used in expressions.</p>
+		<p id = "demo_8"></p>
+
+		<script>
+			function myFunction_5(a, b) {
+				return a * b;
+			}
+			var x = myFunction_5(4, 3) * 2;
+			document.getElementById("demo_8").innerHTML = x;
+		</script>
+	</body>
+</html>
+
+
+<!-- Functions are Objects -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>The arguments.length property returns the number of arguments recieved by the function:</p>
+
+		<p id = "demo_9"></p>
+
+		<script>
+			function myFunction_6(a, b) {
+				return arguments.length;
+			}
+			document.getElementById("demo_9").innerHTML = myFunction_6(4, 3);
+		</script>
+	</body>
+</html>
+
+<!-- The toString() method returns the function as a string: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>The toString() method returns the function as a string:</p>
+
+		<p id = "demo_10"></p>
+
+		<script>
+			function myFunction_7(a, b) {
+				return a * b;
+			}
+			document.getElementById("demo_10").innerHTML = myFunction_7.toString();
+		</script>
+	</body>
+</html>
