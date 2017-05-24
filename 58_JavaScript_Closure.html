@@ -1,0 +1,142 @@
+<!-- JavaScript variables can belong to the local or global scope. -->
+<!-- Global variables can be made local(private) with closures -->
+
+
+<!-- Global Variables -->
+<!-- A function can access all variables defined inside the function, like this: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>A function can access variables defined inside the function:</p>
+
+		<button type = "button" onclick = "myFunction_1()">Click Me!</button>
+
+		<p id = "demo_1"></p>
+
+		<script>
+			function myFunction_1() {
+				var a = 4;
+
+			document.getElementById("demo_1").innerHTML = a * a;
+			}
+		</script>
+	</body>
+</html>
+
+<!-- But a function can also access variables defined outside the function like this: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>A function can access variables defined outside the function:</p>
+
+		<button type = "button" onclick = "myFunction_2()">Click Me!</button>
+
+		<p id = "demo_2"></p>
+
+		<script>
+			var a = 4;
+			function myFunction_2() {
+			document.getElementById("demo_2").innerHTML = a * a;
+			}
+		</script>		
+	</body>
+</html>
+
+
+<!-- A Counter Dilemma -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Counting with a global variable.</p>
+
+		<button type = "button" onclick = "myFunction_3()">Count!</button>
+
+		<p id = "demo_3"></p>
+
+		<script>
+			var counter = 0;
+
+			function add_1() {
+				return counter += 1;
+			}
+
+			function myFunction_3() {
+
+			document.getElementById("demo_3").innerHTML = add_1();
+			}
+		</script>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Counting with a local variable.</p>
+
+		<button type = "button" onclick = "myFunction_4()">Count!</button>
+
+		<p id = "demo_4"></p>
+
+		<script>
+			function add_2() {
+				var counter = 0;
+				return counter += 1;
+			}
+
+			function myFunction_4() {
+				document.getElementById("demo_4").innerHTML = add_2();
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- JavaScript Nested Functions -->
+<!-- All functions have access to the global scope. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Counting with a local variable.</p>
+
+		<p id = "demo_5"></p>
+
+		<script>
+			document.getElementById("demo_5").innerHTML = add_3();
+			function add_3() {
+				var counter = 0;
+				function plus() {counter += 1;}
+				plus();
+				return counter;
+			}
+		</script>
+	</body>
+</html>
+
+
+<!-- JavaScript Closures -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Counting with a local variable.</p>
+
+		<button type = "button" onclick = "myFunction_5()">Count!</button>
+
+		<p id = "demo_6"></p>
+
+		<script>
+			var add = (function () {
+				var counter = 0;
+				return function() {return counter += 1;}
+			})();
+
+			function myFunction_5() {
+				document.getElementById("demo_6").innerHTML = add();
+			}
+		</script>
+	</body>
+</html>
