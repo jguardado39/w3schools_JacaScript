@@ -1,0 +1,173 @@
+<!-- JavaScript functions can be invoked in 4 different ways. -->
+<!-- Each method differs in how this is initialized -->
+
+
+<!-- Invoking a JavaScript Function -->
+<!-- The code in a function is not executed when the function is defined. It is executed when the function is invoked. -->
+
+
+<!-- Invoking a Function as a Function -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>The global function (myFunction) returns the product of the argument (a, b):</p>
+
+		<p id = "demo_1"></p>
+
+		<script>
+			function myFunction_1(a, b) {
+				return a * b;
+			}
+			document.getElementById("demo_1").innerHTML = myFunction_1(10, 2);
+		</script>
+	</body>
+</html>
+
+<!-- myFunction() and window.myFunction() is the same function: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>A global function liek myFunction() automatically becomes a window method.</p>
+
+		<p>myFunction() is the same as windown.myFunction().</p>
+
+		<p id= "demo_2"></p>
+
+		<script>
+			function myFunction_2(a, b) {
+				return a * b
+			}
+			document.getElementById("demo_2").innerHTML = window.myFunction_2(10, 2);
+		</script>
+	</body>
+</html>
+
+
+<!-- The Global Object -->
+<!-- When a function is called without an owner object, the value of this becomes the global object. -->
+<!-- In a web browser the global object is the browser window. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>In HTML the value of <b>this</b>, in a global function, is the window object.</p>
+
+		<p id = "demo_3"></p>
+
+		<script>
+			function myFunction_3() {
+				return this;
+			}
+			document.getElementById("demo_3").innerHTML = myFunction_3();
+		</script>
+	</body>
+</html>
+
+<!-- Using the window object as a variable can easily crash your program. -->
+
+
+<!-- Invoking a Function as a Method -->
+<!-- In JavaScript you can define function as object methods. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>myObject.fullName() will return John Doe:</p>
+
+		<p id = "demo_4"></p>
+
+		<script>
+			var myObject = {
+				firstName: "John",
+				lastName: "Doe",
+				fullName: function () {
+					return this.firstName + " " + this.lastName;
+				}
+			}
+			document.getElementById("demo_4").innerHTML = myObject.fullName();
+		</script>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>The value of <b>this</b>, in an object method, is the owner object.</p>
+
+		<p id = "demo_5"></p>
+
+		<script>
+			var myObject = {
+				firstName: "John",
+				lastName: "Doe",
+				fullName: function() {
+					return this;
+				}
+			}
+			document.getElementById("demo_5").innerHTML = myObject.fullName();
+		</script>
+	</body>
+</html>
+
+<!-- Invoking a function as an object method, causes the value of this to be the object itself. -->
+
+
+<!-- Invoking a Function with a Function Constructor -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>In this example, myFunction is a function constructor:</p>
+
+		<p id = "demo_6"></p>
+
+		<script>
+			function myFunction_4(arg1, arg2) {
+				this.firstName = arg1;
+				this.lastName = arg2;
+			}
+
+			var x = new myFunction_4("John", "Doe")
+			document.getElementById("demo_6").innerHTML = x.firstName;
+		</script>
+	</body>
+</html>
+
+
+<!-- Invoking a Function with a Function Method -->
+<!-- call() and apply() are predefined JavaScript function methods. Both methods can be used to invoke a function, and both methods must have the owner object as first parameter. -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_7"></p>
+
+		<script>
+			var myObject;
+			function myFunction_5(a, b) {
+				return a * b;
+			}
+			myObject = myFunction_5.call(myObject, 10, 2); // Will return 20
+			document.getElementById("demo_7").innerHTML = myObject;
+		</script>		
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_8"></p>
+
+		<script>
+			var myObject, myArray;
+			function myFunction_6(a, b) {
+				return a * b;
+			}
+			myArray = [10, 2]
+			myObject = myFunction_6.apply(myObject, myArray); // Will return 20
+			document.getElementById("demo_8").innerHTML = myObject;
+		</script>
+	</body>
+</html>
