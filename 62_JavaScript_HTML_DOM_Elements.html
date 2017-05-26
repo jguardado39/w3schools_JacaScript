@@ -1,0 +1,236 @@
+<!-- This page teaches you how to find and access HTML elements in an HTML page. -->
+
+
+<!-- Finding HTML Elements -->
+
+<!-- Finding HTML Element by Id -->
+
+<!-- The easiest way to find an HTML element in the DOM, is by using the element id. -->
+<!-- This example finds the elemtn with id = "intro": -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "intro">Hello World!</p>
+
+		<p>This example demostrates the <b>getElementById</b> method!</p>
+
+		<p id = "demo_1"></p>
+
+		<script>
+			var myElement = document.getElementById("intro");
+			document.getElementById("demo_1").innerHTML = "The text from the intro paragraph is " + myElement.innerHTML;
+		</script>
+	</body>
+</html>
+
+<!-- If the element is found, the method will return the element as an object (in myElement). -->
+
+
+<!-- Finding HTML Elements by Tag Name -->
+
+<!-- This example finds all <p> elements: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Hello World!</p>
+
+		<p>The DOM is very useful.</p>
+		<p>This example demostrates the <b>getElementsByTagName</b> method</p>
+
+		<p id = "demo_2"></p>
+
+		<script>
+			var x = document.getElementsByTagName("p");
+			document.getElementById("demo_2").innerHTML = 'The first paragraph (index 0) is: ' + x[0].innerHTML;
+		</script>
+	</body>
+</html>
+
+<!-- This example finds the element with id = "main", and then finds all <p> elements inside "main": -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Hello World!</p>
+
+		<div id = "main">
+			<p>The DOM is very useful.</p>
+			<p>This example demostrates the <b>getElementsByTagName</b> method</p>
+		</div>
+
+		<p id = "demo_3"></p>
+
+		<script>
+			var x = document.getElementById("main");
+			var y = x.getElementsByTagName("p");
+			document.getElementById("demo_3").innerHTML = 'The first paragraph (index 0) inside "main" is: ' + y[0].innerHTML;
+		</script>
+	</body>
+</html>
+
+
+<!-- Finding HTML Elements by Class Name -->
+
+<!-- If you want to find all HTML elements with the same class name, use getElementsByClassName(). -->
+<!-- This example returns a list of all elements with class = "intro". -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Hello World1</p>
+
+		<p class = "intro">The DOM is very useful.</p>
+		<p class = "intro"> This example demostrates the<b>getElementsByClassName</b> method.</p>
+
+		<p id = "demo_4"></p>
+
+		<script>
+			var x = document.getElementsByClassName("intro");
+			document.getElementById("demo_4").innerHTML = 'The first paragraph (index 0) with class = "intro": ' + x[0].innerHTML;
+		</script>
+	</body>
+</html>
+
+<!-- Finding elements by class name does not work in Internet Explorer 8 and earlier versions. -->
+
+
+<!-- Finding HTML Elements by CSS Selectors -->
+
+<!-- If you want to find all HTML elements that matches a specified CSS selector (id, class name, type, attributes, values of attributes, etc), use the querySelectorAll() method. -->
+<!-- This example returns a list of all <p> elements with class = "intro". -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Hello World!</p>
+		
+		<p class = "intro">The DOM is very useful.</p>
+		<p class = "intro">This example demostrates the <b>querySelectorAll</b> method.</p>
+
+		<p id = "demo_5"></p>
+
+		<script>
+			var x = document.querySelectorAll("p.intro");
+			document.getElementById("demo_5").innerHTML = 'The first paragraph (index 0) with class = "intro": ' + x[0].innerHTML;
+		</script>
+	</body>
+</html>
+
+<!-- The querySelectorAll() method does not work in Internet Explorer 8 and earlier versions. -->
+
+
+<!-- Finding HTML Elements by HTML Object Collections -->
+
+<!-- This example finds the form elemnet with id = "frm1", in the forms collection, and displays all elements values: -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<form id = "frm1" action = "/action_page.php">
+			First name: <input type = "text" name = "fname" value = "Donald"><br>
+			Last name: <input type = "text" name = "lname" value = "Duck"><br><br>
+			<input type = "submit" value = "Submit">
+		</form>
+
+		<p>Click "Try it" to display the value of each element in the form.</p>
+
+		<button onclick = "myFunction_1()">Try it</button>
+
+		<p id = "demo_6"></p>
+
+		<script>
+			function myFunction_1() {
+				var x = document.forms["frm1"];
+				var text = "";
+				var i;
+				for (i = 0; i < x.length; i++) {
+					text += x.elements[i].value + "<br>";
+				}
+			document.getElementById("demo_6").innerHTML = text;
+			}
+		</script>
+	</body>
+</html>
+
+
+
+
+<!-- Test Yourself with Exercises! -->
+
+<!-- Exercise 1 -->
+<!-- Use the getElementById mehtod to find the <p> element, and change its text to "Good Job!". -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id = "demo_7">Use the DOM to change my text!</p>
+
+		<script>
+			document.getElementById("demo_7").innerHTML = "Good Job!";
+		</script>
+	</body>
+</html>
+
+
+<!-- Exercise 2 -->
+<!-- Use the getElementsByTagName method to find the <p> element,a nd change its text to "Good Job!". -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Use the DOM to change my text!</p>
+
+		<script>
+			document.getElementsByTagName("p")[0].innerHTML = "Good Job!";
+		</script>
+	</body>
+</html>
+
+<!-- Exercise 3 -->
+<!-- Use the getElementsByClassName method to find the <p> element, and change its text to "Good Job!". -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p class = "test">Use the DOM to change my text!</p>
+
+		<script>
+			document.getElementsByClassName("test").innerHTML = "Good Job!";
+		</script>
+	</body>
+</html>
+
+
+<!-- Exercise 4 -->
+<!-- Use the querySelectorAll method to find the <p> element, and change its text to "Good Job!" -->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Use the DOM to change my text!</p>
+
+		<script>
+			document.querySelectorAll("p")[0].innerHTML = "Good Job!";
+		</script>
+	</body>
+</html>
+
+
+<!-- Exercise 5 -->
+<!-- Use the DOM to find and display the document's title. -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>W3 Schools Demo</title>
+	</head>
+	<body>
+	<p id = "demo_8"></p>
+
+	<script>
+		document.getElementById("demo_8").innerHTML = "The title of this document is: " + document.title;
+	</script>
+	</body>
+</html>
